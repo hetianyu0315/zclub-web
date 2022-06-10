@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="97px" height="218px" viewBox="0 0 97 218" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img_foot_r</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.41" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="51.1400582%" y1="-41.4281839%" x2="48.8684969%" y2="93.5386063%" id="linearGradient-2">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="51.4836824%" y1="-41.4281839%" x2="48.5274513%" y2="93.5386063%" id="linearGradient-3">
+            <stop stop-color="#000000" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="zclub-home" transform="translate(-1046.000000, -5989.000000)">
+            <g id="foot" transform="translate(0.000000, 5973.000000)">
+                <g id="img_foot_r" transform="translate(1046.833537, 16.000000)">
+                    <path d="M90.6664627,66 C93.7040288,66 96.1664627,68.4624339 96.1664627,71.5 L96.1664627,94.1818182 L96.1664627,94.1818182 L85.1664627,97 L85.1664627,71.5 C85.1664627,68.4624339 87.6288966,66 90.6664627,66 Z M90.6664627,121 C93.7040288,121 96.1664627,123.462434 96.1664627,126.5 L96.1664627,149.181818 L96.1664627,149.181818 L85.1664627,152 L85.1664627,126.5 C85.1664627,123.462434 87.6288966,121 90.6664627,121 Z M90.6664627,178 C93.7040288,178 96.1664627,180.462434 96.1664627,183.5 L96.1664627,206.181818 L96.1664627,206.181818 L85.1664627,209 L85.1664627,183.5 C85.1664627,180.462434 87.6288966,178 90.6664627,178 Z" id="Combined-Shape-Copy-3" fill-opacity="0.69" fill="url(#linearGradient-1)" transform="translate(90.666463, 137.500000) scale(-1, 1) translate(-90.666463, -137.500000) "></path>
+                    <polygon id="Rectangle" fill="url(#linearGradient-2)" points="90.6664627 26.2992288 63.1664627 58.4268195 61.7553269 217.59978 44 217.59978 47.1664627 56.4036169 61.7553269 40.6475515"></polygon>
+                    <polygon id="Rectangle-Copy-55" fill-opacity="0.58" fill="url(#linearGradient-3)" points="51.6503277 0 24.1503277 32.1275907 17.7553269 185.59978 -1.13686838e-13 185.59978 8.15032768 30.1043881 22.7391918 14.3483227"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
