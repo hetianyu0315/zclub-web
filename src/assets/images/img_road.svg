@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="946px" height="357px" viewBox="0 0 946 357" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>img_road</title>
+    <defs>
+        <linearGradient x1="66.7786236%" y1="-4.0016967%" x2="66.7786236%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#FFD53F" offset="0%"></stop>
+            <stop stop-color="#000000" stop-opacity="0.03" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="zclub-home" transform="translate(-159.000000, -973.000000)" fill="url(#linearGradient-1)">
+            <path d="M783.511469,973.771425 C783.511469,973.771425 804.077961,973.771425 804.077961,973.771425 C690.2549,981.150733 1046.08836,1029.94775 1093.95105,1141.67397 C1141.81374,1253.40019 1018.6301,1330 797.970954,1330 C577.311811,1330 235.963371,1330 159.02371,1330 C159.02371,1141.67397 815.502731,1133.4558 879.425052,1080.50875 C943.347374,1027.5617 650.064727,973.771425 783.511469,973.771425 Z" id="img_road"></path>
+        </g>
+    </g>
+</svg>

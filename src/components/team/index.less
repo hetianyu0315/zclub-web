@@ -1,0 +1,262 @@
+.teambox {
+    display:none;
+    font-family: ArchivoBlack-Regular, 'Archivo Black';
+}
+
+.teambox2 {
+    max-width:1000px;
+    margin:0 auto;
+    padding-top:170px;
+    font-family: ArchivoBlack-Regular, 'Archivo Black';
+    > h3 {
+        height: 52px;
+        font-size: 40px;
+        font-weight: 400;
+        color: #FFFFFF;
+        line-height: 52px;
+        text-align:center;
+        padding-bottom:57px;
+        padding-top:20px;
+    }
+    > div {
+        position:relative;
+        z-index:1;
+    }
+    img {
+        display:block;
+        width:100%;
+    }
+    ul {
+        position:absolute;
+        width:100%;
+        height:100%;
+        left:0;
+        top:0;
+        li {
+            position:absolute;
+            .touchShow {
+                position:absolute;
+                color:#000;
+                box-sizing: border-box;
+                padding:4% 10% 10%  8%;
+                p {
+                    font-size:30px;
+                    line-height: 40px;
+                    color:#fff;
+                }
+                div {
+                    font-size: 18px;
+                    line-height: 30px;
+                    display:none;
+                }
+                &:hover {
+                    background: rgba(255, 221, 0, 0.8);
+                    p {
+                        color:#000;
+                    }
+                    div {
+                        display:block;
+                    }
+                }
+            }
+            &:nth-of-type(1){
+                top:26%;
+                left:10%;
+                width:26%;
+                height:50%;
+                .touchShow {
+                    width: 120%;
+                    left: -40%;
+                    top: 80%;
+                    &:hover {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                top:34%;
+                left:60%;
+                width:26%;
+                height:54%;
+                .touchShow {
+                    width: 120%;
+                    right: -50%;
+                    top:98%;
+                    &:hover {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(3){
+                top: 10%;
+                left: 60%;
+                width: 26%;
+                height: 22%;
+                .touchShow {
+                    width: 120%;
+                    left: 56%;
+                    top: 65%;
+                    &:hover {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(4){
+                top:58%;
+                left:30%;
+                width:26%;
+                height:40%;
+                .touchShow {
+                    width: 120%;
+                    left: 30%;
+                    top: 96%;
+                    &:hover {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(5){
+                top:5%;
+                left:38%;
+                width:20%;
+                height:30%;
+                .touchShow {
+                    width: 160%;
+                    left: -100%;
+                    top: 30%;
+                    &:hover {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+                }
+            }
+            
+
+            &:hover {
+                    .touchShow {
+                        background: rgba(255, 221, 0, 0.8);
+                        p {
+                            color:#000;
+                        }
+                        div {
+                            display:block;
+                        }
+                    }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .teambox {
+        display:block;
+        padding-top:6vw;
+        padding-left:2vw;
+        padding-right:2vw;
+        > h3 {
+            font-size:6vw;
+            text-align: center;
+            padding-bottom:4vw;
+        }
+        > div {
+            position: relative;
+            padding-top:5vw;
+            :global {
+                .swiper {
+                    padding-top:5vw;
+                }
+            }
+        }
+
+        .item {
+            > div {
+                position:relative;
+                > img {
+                    width:100%;
+                }
+                > div {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(1rem);
+                    padding: 20px;
+                    box-sizing: border-box;
+                    color: rgb(255, 255, 255);
+                    font-size: 2.6vw;
+                    opacity: 0;
+                    transition: all 0.3s linear 0s;
+                    &.active {
+                        opacity:1;
+                    }
+                }
+            }
+            p {
+                font-size:5vw;
+                padding-top: 2vw;
+                padding-bottom: 4vw;
+                text-align: center;
+            }
+        }
+
+        .slideNav {
+            height:5vw;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            z-index:9;
+            span {
+                float:left;
+                width:2.3vw;
+                height:4.8vw;
+                background:url(../../assets/images/arrow_left.png) no-repeat left center;
+                background-size:contain;
+                &:nth-of-type(1){
+                    padding-right:4vw;
+                }
+                &:nth-of-type(2){
+                    padding-left:4vw;
+                    float:right;
+                    float:right;
+                    background:url(../../assets/images/arrow_right.png) no-repeat right center;
+                    background-size:contain;
+                }
+            }
+        }
+    } 
+    .teambox2 {
+        display:none;
+    }
+}
