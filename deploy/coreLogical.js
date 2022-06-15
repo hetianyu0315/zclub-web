@@ -1,4 +1,3 @@
-// 根据命令行输入(`npm run deploy projectName`)获取工程名
 const { upload, getAllFiles, purge } = require('@ndkit/cdn');
 const execSync = require('child_process').execSync;
 const path = require('path');
@@ -8,22 +7,20 @@ module.exports = {
     execSync(npmScript, {
       stdio: 'inherit',
     });
-    // 2. 将dist目录的文件上传至cdn
+    // put dist files to cdn
     const originDirectory = path.resolve(__dirname, '../dist/');
     const filesArr = getAllFiles(originDirectory);
-    const assetsFiles = []; // 资源文件, 无需清空缓存
-    const mainFiles = []; // html文件, 需要清空缓存
+    const assetsFiles = []; 
+    const mainFiles = []; 
     filesArr.forEach((item) => {
       if (item.absolute.indexOf(`.html`) > -1) {
-        mainFiles.push(item); // .html单独处理, 做协商缓存
+        mainFiles.push(item); 
       } else {
-        assetsFiles.push(item); // 资源文件都加上强缓存
+        assetsFiles.push(item); 
       }
     });
-    // console.log(assetsFiles)
-    // console.log(mainFiles)
-
-    // 上传资源文件, 不用清缓存
+    
+    // upload assets to cdn
     const assetsPath = await upload({
       fileArr: assetsFiles,
       Bucket: config.bucket,
@@ -33,7 +30,7 @@ module.exports = {
       s3Type: 'zclub'
     });
 
-    // 上传html文件, 需要清理缓存
+    // upload html to cdn
     const remotePath = await upload({
       fileArr: mainFiles,
       Bucket: config.bucket,
