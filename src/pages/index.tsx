@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './index.less';
 import TeamCom from '@/components/team';
+import RoadCom from '@/components/roadmap';
 import headImg  from '@/assets/images/headImg.png';
 import headImgSvg  from '@/assets/images/img_head_1.svg';
 import headRoad  from '@/assets/images/headroad.png';
@@ -67,35 +68,7 @@ export default function HomePage() {
             </div>
         </div>
       </div>
-      <div className={styles.roadmap}>
-        <h3>RoadMap</h3>
-        <div>
-          <div className={styles.processbar}>
-          </div>
-          <ul>
-            <li>
-              <div className={styles.time}>2022/6</div>
-              <div className={styles.text}>infrastructure design</div>
-            </li>
-            <li>
-              <div className={styles.time}>2022/7</div>
-              <div className={styles.text}>wallet development</div>
-            </li>
-            <li>
-              <div className={styles.time}>2022/8</div>
-              <div className={styles.text}>Gamification Design</div>
-            </li>
-            <li>
-              <div className={styles.time}>2022/Q4</div>
-              <div className={styles.text}>multi-chain development</div>
-            </li>
-            <li>
-              <div className={styles.time}>2023/Q1</div>
-              <div className={styles.text}>Rental system</div>
-            </li>
-          </ul>
-        </div>
-      </div>
+      <RoadCom styles={styles}/>
       <TeamCom />
       <div className={styles.downbox}>
         <h3>Download</h3>

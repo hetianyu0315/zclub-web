@@ -46,18 +46,18 @@ export default function Layout(props) {
       </div>
       <footer>
         <div className={styles.icons}>
-          <a href="https://twitter.com/ZClub_Web3" target="_blank">
+          <a href="https://twitter.com/ZClub_App" target="_blank">
             <img src={footerIco01} alt="" />
           </a>
           <a href="https://discord.gg/FZj8ypXNPx" target="_blank">
             <img src={footerIco02} alt="" />
           </a>
-          <a href="https://t.me/zclub_web3" target="_blank">
+          {/* <a href="https://t.me/zclub_web3" target="_blank">
             <img src={footerIco03} alt="" />
           </a>
           <a href="https://medium.com/@ZClub_Web3" target="_blank">
             <img src={footerIco04} alt="" />
-          </a>
+          </a> */}
         </div>
       </footer>
     </>
