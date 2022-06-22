@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink,  Link } from 'umi';
+import  { useLogin } from '@/components/hooks/login';
 import styles from './index.less';
 import logo from '../assets/images/logo.png';
 import logoSvg from '../assets/images/logo.svg';
@@ -8,8 +9,10 @@ import footerIco02 from '../assets/images/icon_discord.svg';
 import footerIco03 from '../assets/images/icon_tel.svg';
 import footerIco04 from '../assets/images/icon_medium.svg';
 
-export default function Layout(props) {
+export default function Layout(props:any) {
+  const { isLogin } = useLogin();
   const [act,setAct] = useState('');
+  const [goUrl, setGoUrl] = useState(isLogin?'/referral/mission':'/referral');
   
   const barClick = ()=>{
     if(act==''){
@@ -19,10 +22,19 @@ export default function Layout(props) {
     }
   }
 
+  useEffect(()=>{
+    if(isLogin){
+      setGoUrl('/referral/mission')
+    }else{
+      setGoUrl('/referral')
+    }
+  },[isLogin])
+
   return (
     <>
       <nav className={act}>
         <span className={styles.bar} onClick={barClick}></span>
+        <a className={styles.referral} href={goUrl}>Invite</a>
         <a className={styles.logobox} href="/">
           <img src={logoSvg} alt="" />
         </a>
@@ -36,6 +48,9 @@ export default function Layout(props) {
             </li>
             <li>
               <a target="_blank" href="https://ella-li.gitbook.io/zclub/"  onClick={barClick}>WhitePaper</a>
+            </li>
+            <li className={styles.referralbox}>
+              <a href={goUrl} className={styles.referral}>Invite</a>
             </li>
           </ul>
         </div>

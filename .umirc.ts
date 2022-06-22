@@ -30,6 +30,16 @@ export default {
   ],
   routes:[
     {
+      path:'/referral',
+      component: '@/layouts/index2',
+      routes:[
+        { path: '/referral', exact: true,component: '@/pages/invite/index' },
+        { path: '/referral/mission', exact: true,component: '@/pages/invite/mission/index' },
+        { path: '/referral/sharecode', exact: true,component: '@/pages/invite/shareCode/index' },
+        { path: '/referral/wallet', exact: true,component: '@/pages/invite/wallet/index' },
+      ]
+    },
+    {
       path: '/',
       component: '@/layouts/index',
       routes: [
@@ -40,7 +50,6 @@ export default {
     },
   ],
   exportStatic:{
-   // htmlSuffix: true 
   },
   dynamicImport:{
     loading: '@/pages/loading',
