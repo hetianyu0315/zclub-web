@@ -30,7 +30,7 @@ export default function IndexPage(){
     const {isLogin} = useLogin();
     const [butCls,setButCls] = useState(styles.disabled)
     const Submit = ()=>{
-        if(addr.length==44){
+        if(addr.length>10){
             axios.post(`${api}/v1/binding?pkg=app.zclub`,{
                 'bind_type':'wallet',
                 'bind_id': addr
@@ -50,7 +50,7 @@ export default function IndexPage(){
     }
     const Change = (val:string)=>{
         setAdd(val)
-        if(val.length==44){
+        if(val.length>10){
             setButCls('')
         }else{
             setButCls(styles.disabled)

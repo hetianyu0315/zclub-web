@@ -32,7 +32,7 @@ export default function IndexPage(){
                 copyToClipboard(code);
                 break;
             case 'url':
-                copyToClipboard(`${window.location.origin}/referral?referral=${code}`);
+                copyToClipboard(`${window.location.origin}/referral/?referral=${code}`);
                 break;
         }
         toast('copy success')
