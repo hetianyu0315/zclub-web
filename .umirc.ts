@@ -55,4 +55,11 @@ export default {
     loading: '@/pages/loading',
   },
   hash:true,
+  chainWebpack(memo, { env, webpack }) {
+    memo.module.rule('svga')
+      .test(/\.svga$/)
+      .use('url')
+      .loader('url-loader')
+
+  },
 };
