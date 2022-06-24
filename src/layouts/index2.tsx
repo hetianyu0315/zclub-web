@@ -10,7 +10,7 @@ import img_chair02 from '@/assets/images/invite/2.svga';
 import img_chair03 from '@/assets/images/invite/3.svga';
 import img_chair04 from '@/assets/images/invite/4.svga';
 
-const chairs = [img_chair01,img_chair02,img_chair03,img_chair04];
+const chairs = [img_chair01,img_chair02,img_chair04,img_chair03];
 
 export default function Layout(props:any) {
 

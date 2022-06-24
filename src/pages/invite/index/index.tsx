@@ -151,7 +151,7 @@ export default function IndexPage(){
                     <div className={styles.head}>Invite and Earn</div>
                     <ul>
                         <li>- Invite your friends to join Zclub</li>
-                        <li>- Earn Ace Points</li>
+                        <li>- Earn ACE Points</li>
                         <li>- Burn ACE points for AUT tokens or unique NFTs on launch day</li>
                     </ul>
                     <p>The more friends you invite, the more ACE points you earn!!!</p>

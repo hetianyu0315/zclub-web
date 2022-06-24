@@ -4,9 +4,24 @@
     left:50%;
     transform: translate(-50%,0);
     text-align:center;
-    background:rgba(0,0,0,0.8);
+    background:rgba(15,52,120,0.95);
     color:#fff;
-    display:inline-block;
+    display:flex;
     padding:10px;
     z-index:99;
+    min-width: 400px;
+    min-height: 80px;
+    justify-content: center;
+    align-items: center;
+    font-size:24px;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+@media screen and (max-width: 768px) {
+    .message {
+        min-width:30vw;
+        min-height:14vw;
+        font-size:4vw;
+    }
 }

@@ -121,7 +121,7 @@ export default function IndexPage(){
             </div>
             <div className={styles.preDay}>
                 <div>
-                    <em>{`+${curAceMax>curAce?curAce:curAceMax}`}</em> Pre Day
+                    <em>{`+${curAceMax>curAce?curAce:curAceMax}`}</em> Per Day
                 </div>
                 <div>Before Launch</div>
             </div>

@@ -40,6 +40,9 @@ export default function IndexPage(){
                 }
             },).then((res)=>{
                toast('bind success');
+               setTimeout(()=>{
+                    history.push('/referral/mission/')
+               },1500);
             }).catch(e=>{
                 const msg = e?.response?.data?.err_msg||'network err';
                 toast(msg)
@@ -79,7 +82,7 @@ export default function IndexPage(){
         }
     }
     return <>
-        <div className={styles.back} onClick={()=>history.push('/referral/mission')}></div>
+        <div className={styles.back} onClick={()=>history.push('/referral/mission/')}></div>
         <div className={styles.main}>
             <div className={styles.info}>
                 <p>Enter Your Wallet to earn <span><em>+5</em> free ACE</span> per day</p>

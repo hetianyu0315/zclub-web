@@ -37,6 +37,7 @@ export default {
         { path: '/referral/mission', exact: true,component: '@/pages/invite/mission/index' },
         { path: '/referral/sharecode', exact: true,component: '@/pages/invite/shareCode/index' },
         { path: '/referral/wallet', exact: true,component: '@/pages/invite/wallet/index' },
+        { redirect: '/referral'}
       ]
     },
     {
