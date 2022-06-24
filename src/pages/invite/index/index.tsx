@@ -44,7 +44,6 @@ export default function IndexPage(){
             countdown();
         }).catch(e=>{
             const msg = e?.response?.data?.err_msg||'network err';
-            console.log('e',e)
             toast(msg);
         })
     }
@@ -78,7 +77,6 @@ export default function IndexPage(){
                     email,
                     code:otp,
                 })
-                console.log('res',res);
                 if(res.data.code==0&&res.data.data){
                     setLogin(res.data.data.token)
                     history.push('/referral/mission');
@@ -87,7 +85,6 @@ export default function IndexPage(){
                 }
             }catch(e:any){
                 const msg = e?.response?.data?.err_msg||'network err';
-                console.log('e',e)
                 toast(msg);
             }
             
@@ -104,7 +101,6 @@ export default function IndexPage(){
                 countdown();
             }).catch(e=>{
                 const msg = e?.response?.data?.err_msg||'network err';
-                console.log('e',e)
                 toast(msg);
             })
         }else{

@@ -1,10 +1,14 @@
 import React from 'react';
+import {  useSelector,  } from 'dva';
 import styles from './index.less';
 import  { useLogin } from '@/components/hooks/login';
 import logoSvg from '@/assets/images/logo.svg';
 
 export default function IndexPage(){
     const { isLogin, setLogin } = useLogin();
+    const wallet = useSelector(state=>{
+        return state.invite.wallet
+    })
     const logout = ()=>{
         setLogin('');
     }
@@ -16,7 +20,7 @@ export default function IndexPage(){
         </div>
         <div className={styles.opts}>
             {
-                isLogin?<span onClick={logout}>Quite</span>:null
+                isLogin?<span onClick={logout}>{wallet?`${wallet.slice(0,5)}...`:'Quite'}</span>:null
             }
         </div>
     </div>

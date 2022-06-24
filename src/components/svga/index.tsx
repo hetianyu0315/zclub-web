@@ -26,7 +26,6 @@ export default function Svga(props:SvgaProps) {
 
     useEffect(()=>{
         const callback = function(mutationsList:any, observer:any) {
-            console.log('trigger observer')
             for(let mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName == 'class') {
                     const _class = Array.from(mutation.target.classList);
@@ -60,9 +59,7 @@ export default function Svga(props:SvgaProps) {
                 player.current.loops = 1;
                 player.current.clearsAfterStop = false;
                 player.current.setContentMode('AspectFill')
-                //console.log('videoItem2',videoItem);
                 player.current.setVideoItem(videoItem);
-                console.log('ani',ani);
                 if(ani){
                     animate();
                 }
@@ -72,7 +69,6 @@ export default function Svga(props:SvgaProps) {
 
     useEffect(()=>{
         const fn = ()=>{
-            console.log('hide',document.hidden);
             setVisible(!document.hidden);
         }
         window.addEventListener('visibilitychange',fn)

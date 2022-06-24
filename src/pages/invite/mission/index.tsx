@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import {  useDispatch  } from 'dva';
 import  { useLogin } from '@/components/hooks/login';
 import axios from 'axios';
 import { getUrlSearchParams,api } from '@/utils/index';
@@ -7,6 +8,7 @@ import { history } from 'umi';
 import styles from './index.less';
 
 export default function IndexPage(){
+    const dispatch = useDispatch();
     const [total,setTotal] = useState('0');
     const [inviteNum,setInviteNum] = useState('0');
     const [curAce,setCurAce] = useState(0);
@@ -39,6 +41,14 @@ export default function IndexPage(){
             let _bind:Record<string,any> = {};
             (user_bindings||[]).forEach((item:Record<string,any>)=>{
                 _bind[item.bind_type] = true;
+                if(item.bind_type=='wallet'){
+                    dispatch({
+                        type:'invite/setWallet',
+                        payload:{
+                            wallet:item.bind_id
+                        }
+                    })
+                }
             })
             setBindAccount(_bind)
         }).catch(e=>{

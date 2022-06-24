@@ -56,11 +56,19 @@ export default {
     loading: '@/pages/loading',
   },
   hash:true,
+  dva:{
+    immer:false,
+    hmr:false
+  },
   chainWebpack(memo, { env, webpack }) {
+    debugger;
     memo.module.rule('svga')
       .test(/\.svga$/)
-      .use('url')
+      .use('url-loader')
       .loader('url-loader')
-
+      .options({
+        limit:false
+      })
+    return memo;
   },
 };
