@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './index.less';
 import TeamCom from '@/components/team';
 import RoadCom from '@/components/roadmap';
+import toast from '@/components/toast';
 import headImg  from '@/assets/images/headImg.png';
 import headImgSvg  from '@/assets/images/img_head_1.svg';
 import headRoad  from '@/assets/images/headroad.png';
@@ -17,6 +18,9 @@ import downico01 from '@/assets/images/ios.png';
 import downico02 from '@/assets/images/android.png';
 
 export default function HomePage() {
+  const showComeSoon = ()=>{
+    toast('coming soon');
+  }
   return (
     <div>
       <div className={styles.headbox}>
@@ -74,12 +78,12 @@ export default function HomePage() {
         <h3>Download</h3>
         <ul>
           <li>
-            <a href="">
+            <a href="javascript:void(0)" onClick={showComeSoon}>
               <img src={downico01} alt="" />
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="javascript:void(0)" onClick={showComeSoon}>
             <img src={downico02} alt="" />
             </a>
           </li>
