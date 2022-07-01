@@ -61,8 +61,13 @@ export default function IndexPage(){
     }
 
     useEffect(()=>{
-        GetInfo()
-    },[])
+        if(isLogin){
+            GetInfo()
+        }else{
+            history.push('/referral/')
+        }
+        
+    },[isLogin])
 
     useEffect(()=>{
         if(window.location.search&&_id){
