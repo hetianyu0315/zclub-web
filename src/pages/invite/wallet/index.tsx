@@ -85,11 +85,11 @@ export default function IndexPage(){
         <div className={styles.back} onClick={()=>history.push('/referral/mission/')}></div>
         <div className={styles.main}>
             <div className={styles.info}>
-                <p>Enter Your Wallet to earn <span><em>+5</em> free ACE</span> per day</p>
+                <p>Enter Your Solana Wallet to earn <span><em>+5</em> free ACE</span> per day</p>
             </div>
             <div>
                 <dl>
-                    <dt>Wallet Address</dt>
+                    <dt>Solana Wallet Address</dt>
                     <dd>
                         <input type="text" name="" id="" value={addr} onChange={(e)=>Change(e.target.value)}/>
                     </dd>  

@@ -126,8 +126,8 @@ export default function IndexPage(){
     }
 
     return <>
-        {loading?<Loading/>:<>
         <div className={styles.back} onClick={()=>history.push('/')}></div>
+        {loading?<Loading/>:
         <div className={styles.main}>
             <div className={styles.total}>
                 <em>ACE</em>
@@ -200,8 +200,6 @@ export default function IndexPage(){
                     </a>
                 </li>
             </ul>
-        </div>
-        </>}
-        
+        </div>}
         </>
 }
