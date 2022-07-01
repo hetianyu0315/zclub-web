@@ -4,6 +4,7 @@ import  { useLogin } from '@/components/hooks/login';
 import axios from 'axios';
 import { getUrlSearchParams,api } from '@/utils/index';
 import toast from '@/components/toast';
+import Loading from '@/pages/loading';
 import { history } from 'umi';
 import styles from './index.less';
 
@@ -21,6 +22,7 @@ export default function IndexPage(){
     const [bindAccount,setBindAccount] = useState<Record<string,any>>({})
     const [_id,setId] = useState('')
     const [discordTxt,setDiscordTxt] = useState('GO!');
+    const [loading, setLoading] = useState(true);
 
     const GetInfo = ()=>{
         axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
@@ -51,6 +53,7 @@ export default function IndexPage(){
                 }
             })
             setBindAccount(_bind)
+            setLoading(false);
         }).catch(e=>{
             const msg = e?.response?.data?.err_msg||'network err';
             toast(msg)
@@ -109,13 +112,13 @@ export default function IndexPage(){
     }
 
     const twitterProps = {
-        href:bindAccount['twitter']?"#":twitterUrl,
-        target:bindAccount['twitter']?"_self":"_blank",
+        href:bindAccount['twitter']?twitterUrl:twitterUrl,
+        target:"_blank",
     }
 
     const discordProps = {
-        href:bindAccount['discord']?"#":discordUrl,
-        target:bindAccount['discord']?"_self":"_blank",
+        href:bindAccount['discord']?discordUrl:discordUrl,
+        target:"_blank",
     }
 
     const walletProps = {
@@ -123,6 +126,7 @@ export default function IndexPage(){
     }
 
     return <>
+        {loading?<Loading/>:<>
         <div className={styles.back} onClick={()=>history.push('/')}></div>
         <div className={styles.main}>
             <div className={styles.total}>
@@ -197,5 +201,7 @@ export default function IndexPage(){
                 </li>
             </ul>
         </div>
+        </>}
+        
         </>
 }

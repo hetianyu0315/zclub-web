@@ -24,7 +24,7 @@ const copyToClipboard = (str:string)=>{
 
 export default function IndexPage(){
     const [ total, setTotal] = useState(0);
-    const [ code , setCode ] = useState('123');
+    const [ code , setCode ] = useState('');
     const {isLogin} = useLogin();
     const onCopy = (type:string)=>{
         switch(type){
