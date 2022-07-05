@@ -18,7 +18,11 @@ export default function RoadMap(props:any) {
             </li>
             <li>
               <div className={styles.time}>2022/8</div>
-              <div className={styles.text}>Gamification Design<br/>NFT Marketplace<br/>Genesis NFTs<br/>Beta Launch</div>
+              <div className={styles.text}>Gamification Design<br/>NFT Marketplace<br/>Genesis NFTs</div>
+            </li>
+            <li>
+              <div className={styles.time}>2022/9</div>
+              <div className={styles.text}>SocialFi Implement<br/>Beta Launch</div>
             </li>
             <li>
               <div className={styles.time}>2022/Q4</div>
