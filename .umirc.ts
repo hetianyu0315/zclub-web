@@ -30,6 +30,17 @@ export default {
   ],
   routes:[
     {
+      path:'/referral',
+      component: '@/layouts/index2',
+      routes:[
+        { path: '/referral', exact: true,component: '@/pages/invite/index' },
+        { path: '/referral/mission', exact: true,component: '@/pages/invite/mission/index' },
+        { path: '/referral/sharecode', exact: true,component: '@/pages/invite/shareCode/index' },
+        { path: '/referral/wallet', exact: true,component: '@/pages/invite/wallet/index' },
+        { redirect: '/referral'}
+      ]
+    },
+    {
       path: '/',
       component: '@/layouts/index',
       routes: [
@@ -40,10 +51,24 @@ export default {
     },
   ],
   exportStatic:{
-   // htmlSuffix: true 
   },
   dynamicImport:{
     loading: '@/pages/loading',
   },
   hash:true,
+  dva:{
+    immer:false,
+    hmr:false
+  },
+  chainWebpack(memo, { env, webpack }) {
+    debugger;
+    memo.module.rule('svga')
+      .test(/\.svga$/)
+      .use('url-loader')
+      .loader('url-loader')
+      .options({
+        limit:false
+      })
+    return memo;
+  },
 };

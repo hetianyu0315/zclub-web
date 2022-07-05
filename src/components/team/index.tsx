@@ -58,7 +58,6 @@ export default function Team() {
                     loop={true}
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(s) => {
-                        console.log("initialize swiper", s);
                         setSwiper(s);
                       }}
                 >
