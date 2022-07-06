@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
         </div>
       </div>
-      <RoadCom styles={styles}/>
+      <RoadCom />
       <TeamCom />
       <div className={styles.downbox}>
         <h3>Download</h3>

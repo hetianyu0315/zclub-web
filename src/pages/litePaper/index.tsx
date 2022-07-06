@@ -19,7 +19,7 @@ import icon02 from '@/assets/images/icon02.png';
 import icon03 from '@/assets/images/icon03.png';
 
 export default function PagerPage() {
-    return (<div>
+    return (<div className={styles.main}>
         <div className={styles.headbox}>
             <img src={headImg} alt="" />
             <h2>ZClub Litepaper</h2>
@@ -120,6 +120,6 @@ export default function PagerPage() {
         <h3>Token distribution</h3>
         <div><Line/></div>
       </div>
-      <RoadCom styles={styles}/>  
+      <RoadCom/>  
     </div>)
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import styles from './index.less';
 
-export default function RoadMap(props:any) {
-    const {styles} = props
+export default function RoadMap() {
     return (<div className={styles.roadmap}>
         <h3>RoadMap</h3>
         <div>

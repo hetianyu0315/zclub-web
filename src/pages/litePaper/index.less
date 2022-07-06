@@ -1,3 +1,7 @@
+.main {
+    padding-bottom:100px;
+}
+
 .headbox {
     font-family: ArchivoBlack-Regular, 'Archivo Black';
     position:relative;
@@ -375,134 +379,6 @@
     }
 }
 
-.roadmap {
-    padding-bottom:170px;
-    margin-top:110px;
-    > h3 {
-        height: 52px;
-        font-size: 40px;
-        font-family: ArchivoBlack-Regular, 'Archivo Black';
-        font-weight: 400;
-        color: #FFFFFF;
-        line-height: 52px;
-        text-align:center;
-        padding-top:20px;
-        padding-bottom:20px;
-    }
-    >div {
-        position:relative;
-        overflow:hidden;
-        .processbar {
-            width:5px;
-            position:absolute;
-            left:50%;
-            top:0;
-            bottom:0;
-            transform: translate3d(-50%,0,0);
-            background:#666;
-            &::before {
-                content:'';
-                position:absolute;
-                width:5px;
-                height: 78px;
-                background: linear-gradient(180deg, #000000 0%, #36D2A8 100%);
-                top:0;
-            }
-            &::after {
-                content:'';
-                position:absolute;
-                width:5px;
-                height: 83px;
-                background: linear-gradient(180deg, #666666 0%, #000000 100%);
-                bottom:0;
-            }
-        }
-
-        ul {
-            list-style-type: none;
-            
-            li {
-                margin-top:60px;
-                margin-bottom:60px;
-                position:relative;
-                .time {
-                    font-size: 42px;
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
-                    font-weight: 400;
-                    color: #666666;
-                    line-height: 35px;
-                }
-                .text {
-                    font-size: 22px;
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
-                    font-weight: 400;
-                    color: #666666;
-                    line-height: 35px;
-                }
-                &:nth-of-type(2n){
-                    text-align:left;
-                    margin-left:50%;
-                    padding-left:50px;
-                    &::after {
-                        content:"";
-                        width:40px;
-                        height:40px;
-                        border-radius: 100%;
-                        background:#666;
-                        position:absolute;
-                        left:-20px;
-                        top:50%;
-                        transform: translate3d(0,-50%,0);
-                    }
-                }
-                &:nth-of-type(2n+1){
-                    text-align:right;
-                    margin-right:50%;
-                    padding-right:50px;
-                    &::after {
-                        content:"";
-                        width:40px;
-                        height:40px;
-                        border-radius: 100%;
-                        background:#666;
-                        position:absolute;
-                        right:-20px;
-                        top:50%;
-                        transform: translate3d(0,-50%,0);
-                    }
-                }
-                &:nth-of-type(1){
-                    &::after {
-                        content:"";
-                        width:54px;
-                        height:54px;
-                        //background:url(../assets/images/check.png);
-                        background:url(../../assets/images/btn_check.svg);
-                        background-size:100%;
-                        right:-27px;
-                        top:50%;
-                        transform: translate3d(0,-50%,0);
-                    }
-                }
-                &:nth-of-type(2){
-                    &::after {
-                        content:"";
-                        width:54px;
-                        height:54px;
-                        //background:url(../assets/images/check.png);
-                        background:url(../../assets/images/btn_check.svg);
-                        background-size:100%;
-                        left:-27px;
-                        top:50%;
-                        transform: translate3d(0,-50%,0);
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
 @media screen and (max-width: 768px) {
     .headbox {
         h2 {
@@ -602,24 +478,4 @@
         }
 
     }
-    .roadmap {
-        margin-top:4vw;
-        padding-bottom:16vw;
-        > h3 {
-            font-size:6vw;
-        }
-        > div {
-            ul {
-                li {
-                    .time {
-                        font-size:6vw;
-                    }
-                    .text {
-                        font-size:4vw;
-                        line-height: 4.2vw;
-                    }
-                }
-            }
-        }
-    } 
 }
