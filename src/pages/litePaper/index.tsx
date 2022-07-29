@@ -4,16 +4,17 @@ import RoadCom from '@/components/roadmap';
 import styles from './index.less';
 import headImg from '@/assets/images/img_head_2.svg';
 import infoImg from '@/assets/images/img_2nfts.svg';
-import detailImg01 from '@/assets/images/img_hdiw.svg';
-import detailImg02 from '@/assets/images/img_zclub.svg';
-import detailImg03 from '@/assets/images/img_share_revenue.svg';
+import detailImg01 from '@/assets/images/img_what_is_gifting.svg';
+import detailImg02 from '@/assets/images/img_send_gift.svg';
+import detailImg03 from '@/assets/images/img_receive_gift.svg';
+import detailImg04 from '@/assets/images/img_mint.svg';
 import img_dual_token_system from '@/assets/images/img_dual_token_system.svg';
 import coin_aht from '@/assets/images/coin_aht.svg';
 import coin_aut from '@/assets/images/coin_aut.svg';
 import img_tokenomic_1 from '@/assets/images/img_tokenomic_1.svg';
 import img_tokenomic_2 from '@/assets/images/img_tokenomic_2.svg';
 import img_tokenomic_3 from '@/assets/images/img_tokenomic_3.svg';
-import burnImgSvg from '@/assets/images/tokenburning.svg';
+import burnImgSvg from '@/assets/images/img_token_burning.svg';
 import icon01 from '@/assets/images/icon01.png';
 import icon02 from '@/assets/images/icon02.png';
 import icon03 from '@/assets/images/icon03.png';
@@ -23,12 +24,11 @@ export default function PagerPage() {
         <div className={styles.headbox}>
             <img src={headImg} alt="" />
             <h2>ZClub Litepaper</h2>
-            <p>Leading audio-focused social app that<br/>enable users to earn revenue share</p>
+            <p>Leading audio-focused social app the<br/>enable users to talk to earn and get<br/>revenue share from live gifting.</p>
         </div>
         <div className={styles.introduce}>
             <h3>what is ZClub?</h3>
-            <p>ZClub is the first-ever audio-focused Web3 social app that enables everyone across the globe to profit from their social networks and activities. All you need to do is to get an NFT to start, and build your social connections in the Social-Fi and Game-Fi app.</p>
-            <p>We aim to make a difference. In traditional pay-to-play platforms, users are the ones who support, post and pay to use social media. But these platforms never share their money and profits and are the only ones benefiting from its user base. However, ZClub is going to change that and become the next-gen mobile application that enables users to socialize to earn and give money/profits back to them.</p>
+            <p>Build upon Solana and BNB Chian, ZClub is the first ever audio-focused web3 social app that enables users to talk-to-earn and get in-app token rewards from live gifting. All you need to do is to get a SeatNFT and start to chat with your friends in the app, or get a Chatroom NFT to host events or competition, then you will get revenue share from talk-to-earn and live gifting by being an NFT holder.</p>
         </div>
         <div className={styles.info}>
             <img src={infoImg} alt="" />
@@ -37,29 +37,37 @@ export default function PagerPage() {
             <ul>
                 <li>
                     <div className={styles.context}>
-                        <h5>How does it work?</h5>
-                        <p>By equipping themselves with NFTs in forms of Seats or ChatRooms, ZClub users will be able to host events, or welcome friends, guests, and social influencers to communicate, and engage with each other to earn in-app tokens, which later can be used in-game or cashed out.</p>
+                        <h5>What is ZClub Live Gifting?</h5>
+                        <p>Similar to Bits on twitch where people can buy such virtual goods to cheer for their favorite streamers, ZClub live gifting operates in the same way. Whenever your ZClub friends go live, you can send them gifts with varying amounts of token value to show your love, support, admiration and friendship.</p>
+                        <p>Users gain both investing and emotional values from ZClub. Investing values refer to ZClub NFT holders who join the community and talk-to-earn; Emotional values mean users make friends and build social bonds with others to gain happiness, friendship, feeling of existence, and even fulfill their egos. Therefore, users are more encouraged to use ZClub when compared with other X-to-Earn apps, making the ecosystem suitable in the long run.</p>
                     </div>
                     <img src={detailImg01} alt="" />
                 </li>
                 <li>
                     <img src={detailImg02} alt="" />
                     <div className={styles.context}>
-                        <h5>Why does ZClub Share Revenue?</h5>
-                        <p>We do not want users to remain silent or their needs to be overlooked, because they are the vital life force of platforms and should be rewarded for their contributions, and their assets should not be stolen away by platforms. Also, we want to transforms how the social media works. We believe socialize/talk to earn mechanism can make normal users feel valued and thus inspire other businesses and companies to do the same.</p>
+                        <h5>How can I send gifts?</h5>
+                        <p>To be able to send gifts in ZClub, you need to be 18 years or older. You might also ask “Do I need to be an NFT holder to send gift?”: The answer is NO. Both of NFT holders and normal users can send virtual gifts to their friends. However, if you want to #Talk2Earn or get revenue share from these social activities/live gifting, you must be a SeatNFT or ChatRoom NFT holder. Otherwise, you won’t be able to earn any token rewards.</p>
                     </div>
                 </li>
                 <li>
                     <div className={styles.context}>
-                        <h5>How does ZClub Share Revenue?</h5>
-                        <p>We adopt blockchain to do so to ensure everything is transparent so that users know exactly how everything works. We do not profit from selling ads or sensitive user data. We only took a small tax from in-app activities, such as NFT trading, NFT minting, or NFT rental, giving majority of the revenue back to users and DAO members.</p>
+                        <h5>How Do I Become Eligible to Receive Live Gifts in ZClub?</h5>
+                        <p>ZClub is a fair and open community, all of the participants are eligible to receive live gifts from audio chatting. There is no requirement on followers or streaming time. Therefore, you do not need to worry that it is difficult to hit the threshold to be eligible to receive gifts. However, if you want to convert these virtual gifts into in-app tokens, you must become a community member. That is to say you have to become a ZClub NFT holder. Otherwise, you will not be able to get revenue share from live gifts.</p>
                     </div>
                     <img src={detailImg03} alt="" />
+                </li>
+                <li>
+                    <img src={detailImg04} alt="" />
+                    <div className={styles.context}>
+                        <h5>How to mint a new NFT?</h5>
+                        <p>First of all, you should be clear that there are different kinds of NFTs in ZClub. The most important ones are SeatNFT and ChatroomNFT. Room NFT holder is an organizer or a host, Seat NFT is a guest or a participant. Room NFT holders organize talks/events/competitions for SeatNFT holders to join. To mint a new SeatNFT, one should possess two SeatNFTs and burn some AUT and AHT tokens; To mint a new RoomNFT, one should burn six SeatNFTs and AHT&AUT tokens. Bear in mind that each NFT can only be minted for 5 times, think twice before you mint anything</p>
+                    </div>
                 </li>
             </ul>
         </div>
         <div className={styles.tips}>
-            <p>Our purpose is to be the leading Web3 audio-focused social app, enabling the mass to turn their social network into profits and earn a revenue share from social activities.</p>
+            <p>Our purpose is to be the leading audio chat app that enable users to talk to earn. Users buy a SeatNFT to start, and build social connections in the Social-Fi and Game-Fi app and get revenue share from Live gifting.</p>
         </div>
         <div className={styles.system}>
             <h3>Dual-Token System</h3>

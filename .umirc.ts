@@ -45,6 +45,7 @@ export default {
       component: '@/layouts/index',
       routes: [
         { path: '/', exact: true,component: '@/pages/index' },
+        { path: '/howToPlay', exact: true,component: '@/pages/howToPlay/index' },
         { path: '/litePaper', exact: true,component: '@/pages/litePaper/index' },
         { redirect: '/'}
       ],
