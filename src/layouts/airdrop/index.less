@@ -1,0 +1,134 @@
+@font-face {
+    font-family: Archivo Black;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/archivoblack/v17/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf) format("truetype")
+  }
+
+  input {
+    border-radius: 0;
+  }
+  
+  body,nav,footer,div,p,a,span,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5 {
+    margin:0;
+    padding:0;
+  }
+  
+  body {
+    background: #000000;
+    font-family: ArchivoBlack-Regular, 'Archivo Black';
+    color: #FFFFFF;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+
+.main {
+    width:100%;
+    min-height:100vh;
+    position: relative;
+    z-index: 2;
+}
+footer {
+  height: 250px;
+  background: #FFD53F;
+  position:relative;
+  &::before{
+    content: '';
+    background: url(../../assets/images/img_foot_l.svg)  left center no-repeat;
+    position: absolute;
+    left:20px;
+    top:0;
+    width:121px;
+    height:100%;
+  }
+  &::after {
+    content: '';
+    background:url(../../assets/images/img_foot_r.svg)  right center no-repeat;
+    position: absolute;
+    right:20px;
+    top:0;
+    width:121px;
+    height:100%;
+  }
+  .icons {
+    height:100%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    max-width:1000px;
+    margin:0 auto;
+    position:relative;
+    z-index:1;
+    a { 
+      img {
+        width:80px;
+        height:80px;
+        display:block;
+      }
+      &:last-of-type {
+        img {
+          width:320px;
+        }
+      }
+    }
+    
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+
+  }
+  footer {
+    height: 33vw;
+    background: #FFD53F;
+    position:relative;
+    &::before{
+      content: '';
+      background: url(../../assets/images/img_foot_l.svg)  left center no-repeat;
+      background-size:100% 100%;
+      position: absolute;
+      left:10px;
+      top:0;
+      width:26vw;
+      height:100%;
+    }
+    &::after {
+      content: '';
+      background:url(../../assets/images/img_foot_r.svg)  right center no-repeat;
+      background-size:100% 100%;
+      position: absolute;
+      right:10px;
+      top:0;
+      width:26vw;
+      height:100%;
+    }
+    .icons {
+      height:100%;
+      display:flex;
+      justify-content: space-evenly;
+      align-items: center;
+      max-width:1000px;
+      margin:0 auto;
+      position:relative;
+      z-index:1;
+      a { 
+        img {
+          width:10vw;
+          height:10vw;
+          display:block;
+        }
+        &:last-of-type {
+          img {
+            width:40vw;
+          }
+        }
+      }
+      
+    }
+  }
+}

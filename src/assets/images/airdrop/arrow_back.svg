@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48px" height="48px" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>arrow_back</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="确认发twitter" transform="translate(-100.000000, -170.000000)">
+            <g id="arrow_back" transform="translate(124.000000, 194.000000) scale(-1, 1) translate(-124.000000, -194.000000) translate(100.000000, 170.000000)">
+                <circle id="Oval" stroke="#000000" stroke-width="4" fill="#FFFFFF" cx="24" cy="24" r="22"></circle>
+                <path d="M30.9973593,14.4652814 C30.0173593,13.4852814 28.4373593,13.4852814 27.4573593,14.4652814 L19.3226407,22.6 C18.5426407,23.38 18.5426407,24.64 19.3226407,25.42 L27.4573593,33.5547186 C28.4373593,34.5347186 30.0173593,34.5347186 30.9973593,33.5547186 C31.9773593,32.5747186 31.9773593,30.9947186 30.9973593,30.0147186 L25.0026407,24 L31.0173593,17.9852814 C31.9773593,17.0252814 31.9773593,15.4252814 30.9973593,14.4652814 Z" id="Path-Copy" fill="#000000" transform="translate(25.236260, 24.010000) scale(-1, 1) translate(-25.236260, -24.010000) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

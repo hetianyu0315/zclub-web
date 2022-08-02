@@ -53,12 +53,12 @@ nav {
       li {
         height:100px;
         line-height: 100px;
-        padding:0 12px;
+        padding:0 6px;
         a {
           font-size: 20px;
           font-weight: 900;
           color: rgba(255, 255, 255, 0.6);;
-          padding:0 20px;
+          padding:0 10px;
           text-decoration: none;
           &:hover {
             color:#fff;
@@ -91,6 +91,29 @@ nav {
               height:52px;
           }
         }
+
+        .airdrop {
+          display:inline-block;
+          height:40px;
+          line-height: 40px;
+          border:4px solid #FFD53F;
+          padding-left:50px;
+          padding-right:15px;
+          color:#FFD53F;
+          cursor: pointer;
+          text-decoration: none;
+          position:relative;
+          &:before {
+              content: '';
+              position:absolute;
+              left:-2px;
+              top:-12px;
+              background:url('../assets/images/airdrop/airdrop.png') no-repeat center center;
+              background-size:100%;
+              width:51px;
+              height:66px;
+          }
+        }        
       }
     }
   }
@@ -154,30 +177,6 @@ footer {
     padding-right:26px;
     position:relative;
     z-index:2;
-    .referral {
-      float:right;
-      height:6vw;
-      line-height: 6vw;
-      font-size:3.6vw;
-      padding-left:9vw;
-      padding-right:1vw;
-      border:0.5vw solid #FFD53F;
-      color:#FFD53F;
-      display:block;
-      position:relative;
-      text-decoration: none;
-      margin-top:4vw;
-      &:before {
-          content: '';
-          position:absolute;
-          left:0px;
-          top:-2vw;
-          background:url('../assets/images/invite/icon_invite.png') no-repeat center center;
-          background-size:100%;
-          width:8vw;
-          height:8vw;
-      }
-    }
     .bar {
       display:block;
       float:left;
@@ -209,6 +208,7 @@ footer {
         li {
           padding:0;
           height:10vw;
+          text-align: left;
           a {
             display:block;
             color: rgba(255, 255, 255, 0.6);
@@ -225,7 +225,9 @@ footer {
             font-size:3.6vw;
             padding-left:9vw;
             padding-right:1vw;
+            margin-left:4vw;
             border:0.5vw solid #FFD53F;
+            vertical-align: top;
             &:before {
                 content: '';
                 position:absolute;
@@ -237,10 +239,30 @@ footer {
                 height:8vw;
             }
           }
-
-          &.referralbox {
-            display:none;
+          .airdrop {
+            height:6vw;
+            margin-left:4vw;
+            line-height: 6vw;
+            font-size:3.6vw;
+            padding-left:9vw;
+            padding-right:1vw;
+            border:0.5vw solid #FFD53F;
+            vertical-align: top;
+            &:before {
+                content: '';
+                position:absolute;
+                left:0px;
+                top:-1vw;
+                background:url('../assets/images/airdrop/airdrop.png') no-repeat center center;
+                background-size:100% 100%;
+                width:6.6vw;
+                height:8vw;
+            }
           }
+
+          // &.referralbox {
+          //   display:none;
+          // }
         }
       }
     }
