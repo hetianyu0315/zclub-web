@@ -10,7 +10,7 @@ import headRoadSvg  from '@/assets/images/img_road.svg';
 import earnImg from '@/assets/images/earnImg.png';
 import earnImgSvg from '@/assets/images/img_token_earnning.svg';
 import burnImg from '@/assets/images/burnImg.png';
-import burnImgSvg from '@/assets/images/tokenburning.svg';
+import burnImgSvg from '@/assets/images/img_token_burning.svg';
 import icon01 from '@/assets/images/icon01.png';
 import icon02 from '@/assets/images/icon02.png';
 import icon03 from '@/assets/images/icon03.png';
@@ -26,11 +26,11 @@ export default function HomePage() {
       <div className={styles.headbox}>
         <div className={styles.part01}>
           <img src={headImgSvg} />
-          <p>Leading audio-focused social app that<br/>enable users to earn revenue share</p>
+          <p>Leading audio-focused social app that<br/>enables users to talk to earn and get<br/> revenue share from live gifting.</p>
         </div>
         <div className={styles.part02}>
           <img src={headRoadSvg} />
-          <p>Our purpose is to be the leading Web3 audio-focused social app,<br/>enabling the mass to turn their social network into profits, <br/>and earn revenue share from social activities.</p>
+          <p>Our purpose is to be the leading audio chat app that enable users<br/> to talk to earn. Users buy a SeatNFT to start, and build social<br/> connections in the Social-Fi and Game-Fi app and get revenue<br/> share from Live gifting. </p>
         </div>
       </div>
       <div className={styles.earnbox}>
@@ -72,7 +72,7 @@ export default function HomePage() {
             </div>
         </div>
       </div>
-      <RoadCom styles={styles}/>
+      <RoadCom />
       <TeamCom />
       <div className={styles.downbox}>
         <h3>Download</h3>

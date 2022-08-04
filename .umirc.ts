@@ -5,10 +5,10 @@ export default {
     {
       name: 'keywords',
       content:
-        'Leading audio-focused socail app that enable users to earn revenue share ',
+        'Leading audio-focused social app that enable users to earn revenue share',
     },
     {
-      name:'apple-mobile-web-app-capable',
+      name: 'apple-mobile-web-app-capable',
       content: 'yes'
     },
     {
@@ -27,6 +27,26 @@ export default {
       property: 'og:image',
       content: 'https://zclub.app/logo_small.png',
     },
+    {
+      property: 'twitter:card',
+      content: 'summary_large_image'
+    },
+    {
+      property: 'twitter:title',
+      content: 'ZClub'
+    },
+    {
+      property: 'twitter:description',
+      content: 'Leading audio-focused social app that enable users to earn revenue share'
+    },
+    {
+      property: 'twitter:url',
+      content: 'https://zclub.app'
+    },
+    {
+      property: 'twitter:image',
+      content: 'https://zclub.app/img_tweet.png'
+    }
   ],
   routes:[
     {
@@ -45,6 +65,7 @@ export default {
       component: '@/layouts/index',
       routes: [
         { path: '/', exact: true,component: '@/pages/index' },
+        { path: '/howToPlay', exact: true,component: '@/pages/howToPlay/index' },
         { path: '/litePaper', exact: true,component: '@/pages/litePaper/index' },
         { redirect: '/'}
       ],

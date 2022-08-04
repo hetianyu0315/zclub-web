@@ -44,6 +44,9 @@ export default function Layout(props:any) {
               <NavLink exact to="/" onClick={barClick}>Home</NavLink>
             </li>
             <li>
+              <NavLink exact to="/howToPlay"  onClick={barClick}>How to Play</NavLink>
+            </li>
+            <li>
               <NavLink exact to="/litePaper"  onClick={barClick}>LitePaper</NavLink>
             </li>
             <li>
