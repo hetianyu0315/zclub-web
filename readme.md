@@ -1,6 +1,6 @@
 # ZClub
 
-![zclub](./public/favicons/logo_small.png)
+![zclub](./public/logo_small.png)
 
 This project is the official website of zclub,
 
