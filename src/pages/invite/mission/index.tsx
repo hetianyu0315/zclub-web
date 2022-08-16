@@ -127,7 +127,11 @@ export default function IndexPage(){
     }
 
     const walletProps = {
-        href:bindAccount['wallet']?"#":"/referral/wallet"
+        //href:bindAccount['wallet']?"#":"/referral/wallet"
+        href:'#',
+        onClick:()=>{
+            toast(`Link Wallet is closed`)
+        }
     }
 
     return <>

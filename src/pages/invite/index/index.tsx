@@ -76,6 +76,7 @@ export default function IndexPage(){
                 let res = await axios.post(`${api}/v1/auth/login?&refer=${code}&pkg=app.zclub`,{
                     email,
                     code:otp,
+                    login_type: "email",
                 })
                 if(res.data.code==0&&res.data.data){
                     setLogin(res.data.data.token)

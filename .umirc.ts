@@ -48,48 +48,61 @@ export default {
       content: 'https://zclub.app/img_tweet.png'
     }
   ],
-  routes:[
+  routes: [
     {
-      path:'/referral',
+      path: '/airdrop',
+      component: '@/layouts/airdrop/index',
+      routes: [
+        { path: '/airdrop', exact: true, component: '@/pages/airdrop/index' },
+        { path: '/airdrop/verify', exact: true, component: '@/pages/airdrop/verify' },
+        { redirect: '/airdrop' }
+      ]
+    },
+    {
+      path: '/referral',
       component: '@/layouts/index2',
-      routes:[
-        { path: '/referral', exact: true,component: '@/pages/invite/index' },
-        { path: '/referral/mission', exact: true,component: '@/pages/invite/mission/index' },
-        { path: '/referral/sharecode', exact: true,component: '@/pages/invite/shareCode/index' },
-        { path: '/referral/wallet', exact: true,component: '@/pages/invite/wallet/index' },
-        { redirect: '/referral'}
+      routes: [
+        { path: '/referral', exact: true, component: '@/pages/invite/index' },
+        { path: '/referral/mission', exact: true, component: '@/pages/invite/mission/index' },
+        { path: '/referral/sharecode', exact: true, component: '@/pages/invite/shareCode/index' },
+        //{ path: '/referral/wallet', exact: true, component: '@/pages/invite/wallet/index' },
+        { redirect: '/referral' }
       ]
     },
     {
       path: '/',
       component: '@/layouts/index',
       routes: [
-        { path: '/', exact: true,component: '@/pages/index' },
-        { path: '/howToPlay', exact: true,component: '@/pages/howToPlay/index' },
-        { path: '/litePaper', exact: true,component: '@/pages/litePaper/index' },
-        { redirect: '/'}
+        { path: '/', exact: true, component: '@/pages/index' },
+        { path: '/howToPlay', exact: true, component: '@/pages/howToPlay/index' },
+        { path: '/litePaper', exact: true, component: '@/pages/litePaper/index' },
+        { redirect: '/' }
       ],
     },
   ],
-  exportStatic:{
+  exportStatic: {
   },
-  dynamicImport:{
+  dynamicImport: {
     loading: '@/pages/loading',
   },
-  hash:true,
-  dva:{
-    immer:false,
-    hmr:false
+  hash: true,
+  dva: {
+    immer: false,
+    hmr: false
   },
+  webpack5:{},
   chainWebpack(memo, { env, webpack }) {
-    debugger;
     memo.module.rule('svga')
       .test(/\.svga$/)
       .use('url-loader')
       .loader('url-loader')
       .options({
-        limit:false
+        limit: false
       })
+    memo.module.rule('css')
+      .test(/\.css$/)
+      .sideEffects(true);
+    
     return memo;
   },
 };

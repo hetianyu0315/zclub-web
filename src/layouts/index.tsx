@@ -2,12 +2,12 @@ import React, {useEffect, useState} from 'react';
 import { NavLink,  Link } from 'umi';
 import  { useLogin } from '@/components/hooks/login';
 import styles from './index.less';
-import logo from '../assets/images/logo.png';
-import logoSvg from '../assets/images/logo.svg';
-import footerIco01 from '../assets/images/icon_tw.svg';
-import footerIco02 from '../assets/images/icon_discord.svg';
-import footerIco03 from '../assets/images/icon_tel.svg';
-import footerIco04 from '../assets/images/icon_medium.svg';
+import logo from '@/assets/images/logo.png';
+import logoSvg from '@/assets/images/logo.svg';
+import footerIco01 from '@/assets/images/icon_tw.svg';
+import footerIco02 from '@/assets/images/icon_discord.svg';
+import footerIco03 from '@/assets/images/icon_tel.svg';
+import footerIco04 from '@/assets/images/icon_medium.svg';
 
 export default function Layout(props:any) {
   const { isLogin } = useLogin();
@@ -34,7 +34,7 @@ export default function Layout(props:any) {
     <>
       <nav className={act}>
         <span className={styles.bar} onClick={barClick}></span>
-        <a className={styles.referral} href={goUrl}>Invite</a>
+        {/* <a className={styles.referral} href={goUrl}>Invite</a> */}
         <a className={styles.logobox} href="/">
           <img src={logoSvg} alt="" />
         </a>
@@ -54,6 +54,9 @@ export default function Layout(props:any) {
             </li>
             <li className={styles.referralbox}>
               <a href={goUrl} className={styles.referral}>Invite</a>
+            </li>
+            <li className={styles.airdropbox}>
+              <NavLink className={styles.airdrop} exact to="/airdrop" >Airdrop</NavLink>
             </li>
           </ul>
         </div>
