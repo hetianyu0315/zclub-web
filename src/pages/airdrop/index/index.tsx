@@ -45,6 +45,7 @@ export default function IndexPage() {
     const [shareUrl, setShareUrl] = useState('')
     const [twitterInfo,setTwitterInfo] = useState<Record<string,any>>({});
     const [summary,setSummary] = useState<Record<string,any>>({});
+    const [loading,setLoading] = useState(false);
 
 
     const goFollow = () => {
@@ -157,6 +158,7 @@ export default function IndexPage() {
     }
 
     const getUserInfo = ()=>{
+        setLoading(false);
         axios.get(`${api}/v1/users/me?pkg=app.zclub`,{
             headers:{
                 'Authorization':`HIN ${token}`
@@ -169,6 +171,7 @@ export default function IndexPage() {
                 setDiscordJoin(point_conf.discord_join_link)
                 setDiscordAuthUrl(point_conf.discord_oauth_link);
                 setTwitter(false);
+                setLoading(true);
                 //setDiscord(false);
                 const loc_store = {
                     twitter:false,
@@ -222,10 +225,10 @@ export default function IndexPage() {
     },[token])
 
     useEffect(()=>{
-        if(twitter){
+        if(loading){
             getSpaceInfo();
         }
-    },[twitter])
+    },[loading])
 
     // useEffect(()=>{
     //     if(spaceInfo && spaceInfo.poster_url=="" && prevImg){
@@ -345,7 +348,7 @@ export default function IndexPage() {
                     <h4>{item.title}</h4>
                     <div className={styles.peoples}>
                         {item.listeners.slice(0,5).map((it:any)=><img src={it.avatar_url} alt="" />)}
-                        <span>{item.listeners.length} Listeners</span>
+                        <span>{item.total_live_listeners} Listeners</span>
                     </div>
                 </div>)}
             </> : <>
