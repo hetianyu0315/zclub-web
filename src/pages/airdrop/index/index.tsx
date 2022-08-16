@@ -110,7 +110,7 @@ export default function IndexPage() {
         }).catch(e=>{
             const info = {
                 '92038':'already claimed',
-                '80003':'index error',
+                '80003':'the file is too large or parameter is incorrect',
                 '20221':'did not connect twitter/ did not follow twitter/ participant 0 twitter space'
             } 
             const code = e?.response?.data?.code;
