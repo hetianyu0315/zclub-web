@@ -167,6 +167,15 @@ export default function IndexPage() {
                         ...loginInfo,
                         isDone:true
                      })
+                }else{
+                    localStorage.setItem('userInfo',JSON.stringify({
+                        ...loginInfo,
+                        isDone:false
+                    }))
+                    setLoginInfo({
+                        ...loginInfo,
+                        isDone:false
+                     })
                 }
                 
             }else{
