@@ -16,7 +16,6 @@ import downImg from '@/assets/images/airdrop/down.png';
 import cardHost from '@/assets/images/airdrop/host.svg';
 import cardListener from '@/assets/images/airdrop/listener.svg';
 import cardSpeaker from '@/assets/images/airdrop/speaker.svg';
-import { dataTool } from 'echarts';
 
 const _msg = 'Due to Twitter API limitations, the ZClub bot does not have capture your Space list. Please participate in more Twitter Spaces, then return to the page to refresh. Thank you for your patience and understanding :)';
 
