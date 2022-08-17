@@ -86,7 +86,7 @@ export default function IndexPage() {
         setMsg('');
         const formData = new FormData();
         //@ts-ignore;
-        const img_blob = await toBlob(ref.current,{});
+        const img_blob = await toBlob(ref.current,{canvasWidth:800, canvasHeight:400,pixelRatio:1});
         //@ts-ignore;
         formData.append('file',img_blob);
         axios.post(`${api}/v1/poster/claim?pkg=app.zclub`,formData,{

@@ -732,5 +732,108 @@
                 margin: 0 3vw;
             }
         }
+
+        .spaceInfo{
+            margin:0 5vw 5vw;
+            .userInfo {
+                display:flex;
+                align-items: center;
+                .avatar {
+                    width:8vw;
+                    height:8vw;
+                    border-radius:100%;
+                    overflow:hidden;
+                    margin-right:10px;
+                    img {
+                        display:block;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                .info {
+                    div {
+                        font-size: 6vw;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                        line-height: 6.8vw;
+                    }
+                    p {
+                        font-size: 4vw;
+                        font-weight: 400;
+                        color: #999999;
+                        line-height: 4.4vw;
+                        vertical-align: top;
+                    }
+                }
+            }
+            ul {
+               
+                li {
+                  
+                    em {
+                        font-size: 8vw;
+                        line-height: 10vw;
+                        font-style: normal;
+                    }
+                    p {
+                        font-size: 3vw;
+                        line-height: 3.4vw;
+                    }
+                }
+            }
+        }
+        .listener {
+            margin: 0 5vw 5vw;
+            padding:1vw;
+            .info {
+                a {
+                    float:right;
+                    i {
+                        display:block;
+                        background:url(~@/assets/images/airdrop/twitter.png) no-repeat;
+                        background-size:100%;
+                        width:8vw;
+                        height:8vw;
+                    }
+                }
+                
+                span  {
+                    font-size: 3vw;
+                    line-height: 3.4vw;
+                }
+                em {
+                    font-size: 3vw;
+                    line-height: 3.4vw;
+                    margin-left:20px;
+                }
+            }
+    
+            h4 {
+                font-size: 3.6vw;
+                line-height: 3.8vw;
+            }
+    
+            .peoples {
+                padding-top:20px;
+                img {
+                    width:8vw;
+                    height:8vw;
+                    border-radius: 100%;
+                    border: 2px solid #000000;
+                    overflow: hidden;
+                    margin-left:-3.6vw;
+                    vertical-align: top;
+                    &:nth-of-type(1){
+                        margin-left:0;
+                    }
+                }
+                span {
+                    font-size: 3.2vw;
+                    line-height: 9vw;
+                    vertical-align: top;
+                    margin-left:20px;
+                }
+            }
+        }
     }
 }
