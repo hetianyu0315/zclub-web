@@ -16,6 +16,7 @@ import downImg from '@/assets/images/airdrop/down.png';
 import cardHost from '@/assets/images/airdrop/host.svg';
 import cardListener from '@/assets/images/airdrop/listener.svg';
 import cardSpeaker from '@/assets/images/airdrop/speaker.svg';
+import { dataTool } from 'echarts';
 
 const _msg = 'Due to Twitter API limitations, the ZClub bot does not have capture your Space list. Please participate in more Twitter Spaces, then return to the page to refresh. Thank you for your patience and understanding :)';
 
@@ -49,19 +50,24 @@ export default function IndexPage() {
 
 
     const goFollow = () => {
-        localStorage.setItem('userInfo', JSON.stringify({
-            ...loginInfo,
-            follow: true
-        }));
-        setFollow(true);
+        setTimeout(()=>{
+            localStorage.setItem('userInfo', JSON.stringify({
+                ...loginInfo,
+                follow: true
+            }));
+            setFollow(true);
+        },500);
     }
 
     const goDiscord = () => {
-        localStorage.setItem('userInfo', JSON.stringify({
-            ...loginInfo,
-            discord: true
-        }));
-        setDiscord(true);
+        setTimeout(()=>{
+            localStorage.setItem('userInfo', JSON.stringify({
+                ...loginInfo,
+                discord: true
+            }));
+            setDiscord(true);
+        })
+        
         // if(discordUrl!=discordAuthUrl){
         //     setTimeout(()=>{
         //         setDiscordUrl(discordAuthUrl);
@@ -81,6 +87,10 @@ export default function IndexPage() {
     const Sync = async ()=>{
         if(!(twitter&&discord)){
             return 
+        }
+        if(!spaceInfo?.spaces?.length){
+            toast('Waiting for space information')
+            return ;
         }
         setBtnLoad(true);
         setMsg('');
@@ -111,7 +121,7 @@ export default function IndexPage() {
             const info = {
                 '92038':'already claimed',
                 '80003':'the file is too large or parameter is incorrect',
-                '20221':'did not connect twitter/ did not follow twitter/ participant 0 twitter space'
+                '20221':'Did not complete comminity tasks or bot did not detect your space info'
             } 
             const code = e?.response?.data?.code;
             // @ts-ignore
@@ -148,6 +158,17 @@ export default function IndexPage() {
                 setSpaceInfo(res.data.data)
                 setTwitterInfo(res.data.data.user)
                 setSummary(res.data.data.summary);
+                if(res.data.data.is_claim){
+                    localStorage.setItem('userInfo',JSON.stringify({
+                        ...loginInfo,
+                        isDone:true
+                    }))
+                    setLoginInfo({
+                        ...loginInfo,
+                        isDone:true
+                     })
+                }
+                
             }else{
                 toast(res.data.msg||'error')
             }
@@ -165,13 +186,14 @@ export default function IndexPage() {
             }
         }).then(res=>{
             if(res.data.code == 0){
-                const {point_conf,user_bindings} = res.data.data;
+                const {point_conf,user_bindings,is_claim} = res.data.data;
                 seTwitterUrl(point_conf.twitter_link)
                 setDiscordUrl(point_conf.discord_join_link)
                 setDiscordJoin(point_conf.discord_join_link)
                 setDiscordAuthUrl(point_conf.discord_oauth_link);
                 setTwitter(false);
                 setLoading(true);
+
                 //setDiscord(false);
                 const loc_store = {
                     twitter:false,
@@ -351,6 +373,74 @@ export default function IndexPage() {
                         <span>{item.total_live_listeners} Listeners</span>
                     </div>
                 </div>)}
+                <div className={styles.qa}>
+                    <h5>FAQs about the NFT airdrop</h5>
+                    <dl>
+                        <dt>Q1: What is ZClub NFT?</dt>
+                        <dd>
+                            <p>
+                            A: ZClub NFTs are in-app NFTs that can be used in ZClub social app to Talk2Earn. There are different types of NFTs, such as SeatNFT, ChatRoomNFT, CrownNFT. Each NFTs will enable able users to host events or competitions for greater social connections, or level up for greater fun. Also, ZClub NFT is also a credential for participation future incentive events, like airdrop or giveaway.
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q2: Which blockchain is ZClub based on? What is the price of NFTs?</dt>
+                        <dd>
+                            <p>
+                            A: ZClub is built on the Solana blockchain. Currently, all twitter space users are entitled for free NFT airdrop. That is to say they can claim it for free and with no gas.
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q3: Why is my Space data inaccurate?</dt>
+                        <dd>
+                            <p>
+                            A: Only data within 20 days can be calculated because of tech issues. If your data is still incorrect, please try to join a new Twitter Space, preferably with key words like web3, NFT, BTC, BNB, NFTs, Binance, crypto, blockchain, AMA, whitelist, dao, giveaway, airdrop, etc. Twitter space talks with crypt key words are more likely to be captured by our bots!
+                            </p>
+                            <p>
+                            If you still got any suggestions or problems, please join our Discord community(<a href="https://discord.gg/ESJQtDmxaN" target="_blank">https://discord.gg/ESJQtDmxaN</a>) and ask our admin
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q4: How to connect wallet on mobile?</dt>
+                        <dd>
+                            <p>
+                            A: It is easy to connect wallet on PC to claim NFTs. However, if you want to participate in ZClub Free NFT events via mobile, please follow the steps below:
+                            <ul>
+                                <li>1. Open your SOL wallet app like Phantom or Solflare </li>
+                                <li>2. Go to SOL wallet app internal web portal page</li>
+                                <li>3. Input ZClub official site (<a href="https://zclub.app/" target="_blank">https://zclub.app/</a>)</li>
+                                <li>4. Follow the instructions to complete all community tasks to claim free NFTs</li>
+                            </ul>
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q5: I joined Space Talk today on PC. Why my space info is still incorrect? What can I do to get the free airdrop?</dt>
+                        <dd>
+                            <p>
+                            A: ZClub Bot priorities will be given to twitter space mobile users. Please try to run space talk or join a space talk on mobile Twitter app, so that your space data will be captured by our bot ASAP. Also, make sure to stay in the space talk around 15 mins, otherwise, bot may failed to capture your data.
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q6. When can I get ZClub NFTs?</dt>
+                        <dd>
+                            <p>
+                            A: ZClub NFTs will be distributed on the launch day (By the mid of Sept until further notice). Make sure you followed our twitter or joined discord community for the latest info. 
+                            </p>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>Q7: Can the NFTs be sold or transferred?</dt>
+                        <dd>
+                            <p>
+                            A: Yes. ZClub NFTs can be transferred or be sold on third-party platforms such as opeasan, Rarible, SuperRare.etc. 
+                            </p>
+                        </dd>
+                    </dl>
+                </div>
             </> : <>
                 <div className={styles.box}>
                     <img src={Img} alt="" />
