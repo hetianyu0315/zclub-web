@@ -264,6 +264,19 @@
                 display:block;
                 cursor: pointer;
                 font-family: ArchivoBlack-Regular, 'Archivo Black';
+                position:relative;
+                overflow: hidden;
+                i {
+                    position: absolute;
+                    height:500px;
+                    width:500px;
+                    left:50%;
+                    top:50%;
+                    transform: translate3d(-50%,-50%,0);
+                    background:#199CF0 url(~@/assets/images/airdrop/loading.png) no-repeat center center;
+                    background-size:30px 30px;
+                    animation: rotate 1s linear 0s infinite;
+                }  
             }
         }
         > button {

@@ -35,6 +35,7 @@ export default function IndexPage() {
     const [discord, setDiscord] = useState(loginInfo.discord);
     const [msg, setMsg] = useState('')
     const [btnLoad, setBtnLoad] = useState(false);
+    const [btnLoad2, setBtnLoad2] = useState(false);
     const { visible, setVisible } = useWalletModal();
     const [prevImg, setPrevImg] = useState<string | undefined>();
     const [spaceInfo, setSpaceInfo] = useState([]);
@@ -144,11 +145,35 @@ export default function IndexPage() {
         history.push('/airdrop/verify/')
     }
 
-    const goShare = useCallback(async () => {
-        if (shareUrl) {
-            window.open(shareUrl);
-        }
-    }, [shareUrl])
+    // const goShare = useCallback(async () => {
+    //     axios.get(`${api}/v1/poster/share`).then(res=>{
+
+    //     }).catch(e=>{
+            
+    //     })
+    //     if (shareUrl) {
+    //         window.open(shareUrl);
+    //     }
+    // }, [shareUrl])
+    const goShare =  () => {
+        setBtnLoad2(true);
+        axios.get(`${api}/v1/poster/share`,{
+            headers: {
+                'Authorization': `HIN ${token}`
+            }
+        }).then(res=>{
+            if(res.data.code == 0){
+                window.open(res.data.data.twitter);
+            }else{
+                toast(res.data.err_msg || 'error')
+            }
+        }).catch(e=>{
+            const msg = e?.response?.data?.err_msg || 'network err';
+            toast(msg)
+        }).finally(()=>{
+            setBtnLoad2(false);
+        })
+    }
 
     const getSpaceInfo = () => {
         axios.get(`${api}/v1/users/me/space?pkg=app.zclub`, {
@@ -183,7 +208,7 @@ export default function IndexPage() {
                 }
 
             } else {
-                toast(res.data.msg || 'error')
+                toast(res.data.err_msg || 'error')
             }
         }).catch(e => {
             const msg = e?.response?.data?.err_msg || 'network err';
@@ -226,7 +251,7 @@ export default function IndexPage() {
                     ...loc_store
                 }));
             } else {
-                toast(res.data.msg || 'error')
+                toast(res.data.err_msg || 'error')
             }
         }).catch(e => {
             const msg = e?.response?.data?.err_msg || 'network err';
@@ -321,7 +346,7 @@ export default function IndexPage() {
                             <img src={prevImg} alt="" />
                             <span onClick={prevImgDown}><img src={downImg} alt="" /></span>
                         </div>
-                        <button onClick={goShare}>Tell friends via Twitter</button>
+                        <button onClick={goShare}>Tell friends via Twitter{btnLoad2&&<i></i>}</button>
                     </div> : <>
                         <div className={styles.bod}>
                             <img src={Img} alt="" />
