@@ -91,6 +91,10 @@ export default function IndexPage() {
             toast('Waiting for space information')
             return;
         }
+        if(summary.host==0 && summary.listener==0 && summary.speaker==0){
+            toast('Waiting for space information')
+            return;
+        }
         setBtnLoad(true);
         setMsg('');
         const formData = new FormData();
@@ -130,7 +134,7 @@ export default function IndexPage() {
         }).finally(() => {
             setBtnLoad(false);
         })
-    },[spaceInfo,twitter,discord])
+    },[spaceInfo,twitter,discord,summary])
 
     const Connection = () => {
         setVisible(true);
