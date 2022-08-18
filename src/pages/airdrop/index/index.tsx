@@ -527,14 +527,14 @@ export default function IndexPage() {
                         </li>
                         <li>
                             <div>
-                                <img src={cardListener} alt="" />
+                                <img src={cardSpeaker} alt="" />
                                 <span>Speaker</span>
                             </div>
                             <em>{summary.speaker}</em>
                         </li>
                         <li>
                             <div>
-                                <img src={cardSpeaker} alt="" />
+                                <img src={cardListener} alt="" />
                                 <span>Listener</span>
                             </div>
                             <em>{summary.listener}</em>
