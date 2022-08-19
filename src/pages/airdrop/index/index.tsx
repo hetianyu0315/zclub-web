@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef, useCallback } from 'react';
+import React, { useEffect, useState, useRef, useCallback, ImgHTMLAttributes } from 'react';
 import styles from './index.less';
 import { history } from 'umi';
 import axios from 'axios';
@@ -27,6 +27,7 @@ const formatDate = (str: string) => {
 
 export default function IndexPage() {
     const ref = useRef<HTMLDivElement>(null)
+    const ref2 = useRef<any>(null)
     const { loginInfo, setLoginInfo } = useLogin()
     const [token, setToken] = useState(localStorage.getItem('airdropTk'));
     const [twitter, setTwitter] = useState(loginInfo.twitter);
@@ -186,6 +187,7 @@ export default function IndexPage() {
                 setSpaceInfo(res.data.data)
                 setTwitterInfo(res.data.data.user)
                 setSummary(res.data.data.summary);
+                setPrevImg(res.data.data.poster_url);
                 if (!res.data.data.is_claim) {
                     localStorage.setItem('userInfo', JSON.stringify({
                         ...loginInfo,
@@ -259,9 +261,12 @@ export default function IndexPage() {
         })
     }
 
-    const prevImgDown = () => {
+    const prevImgDown = async() => {
+        //@ts-ignore;
         var link = document.createElement('a');
-        link.download = 'ZClubNFT.jpeg';
+        link.target="_blank";
+        link.download = 'ZClubNFT.png';
+        link.title = 'ZClubNFT.png';
         //@ts-ignore
         link.href = prevImg;
         link.click();
@@ -270,13 +275,13 @@ export default function IndexPage() {
 
 
 
-    useEffect(() => {
-        if (token && loginInfo.isDone && ref && ref.current && spaceInfo?.spaces?.length) {
-            toJpeg(ref.current, {}).then(dataUri => {
-                setPrevImg(dataUri);
-            })
-        }
-    }, [loginInfo, token, ref, twitterInfo, spaceInfo])
+    // useEffect(() => {
+    //     if (token && loginInfo.isDone && ref && ref.current && spaceInfo?.spaces?.length) {
+    //         toJpeg(ref.current, {}).then(dataUri => {
+    //             setPrevImg(dataUri);
+    //         })
+    //     }
+    // }, [loginInfo, token, ref, twitterInfo, spaceInfo])
 
     useEffect(() => {
         if (token) {
@@ -342,10 +347,10 @@ export default function IndexPage() {
                     {loginInfo.isDone ? <div className={styles.done}>
                         <h3>🎉 Congratulations</h3>
                         <p>You’ve won a free ZClub NFT.   In-app NFTs will be distributed on launch day, make sure to join <a href={discordJoin} target="_blank">Discord</a> for the latest info.</p>
-                        <div className={styles.res}>
-                            <img src={prevImg} alt="" />
+                        {prevImg&&<div className={styles.res}>    
+                            <img src={prevImg} alt="" ref={ref2}/>
                             <span onClick={prevImgDown}><img src={downImg} alt="" /></span>
-                        </div>
+                        </div>}
                         <button onClick={goShare}>Tell friends via Twitter{btnLoad2&&<i></i>}</button>
                     </div> : <>
                         <div className={styles.bod}>
