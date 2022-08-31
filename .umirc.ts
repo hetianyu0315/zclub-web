@@ -94,7 +94,7 @@ export default {
   chainWebpack(memo, { env, webpack }) {
     memo.module.rule('svga')
       .test(/\.svga$/)
-      .use('url-loader')
+      .use('file-loader')
       .loader('url-loader')
       .options({
         limit: false
