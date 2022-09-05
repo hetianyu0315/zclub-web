@@ -264,6 +264,19 @@
                 display:block;
                 cursor: pointer;
                 font-family: ArchivoBlack-Regular, 'Archivo Black';
+                position:relative;
+                overflow: hidden;
+                i {
+                    position: absolute;
+                    height:500px;
+                    width:500px;
+                    left:50%;
+                    top:50%;
+                    transform: translate3d(-50%,-50%,0);
+                    background:#199CF0 url(~@/assets/images/airdrop/loading.png) no-repeat center center;
+                    background-size:30px 30px;
+                    animation: rotate 1s linear 0s infinite;
+                }  
             }
         }
         > button {
@@ -451,6 +464,44 @@
                 line-height: 60px;
                 vertical-align: top;
                 margin-left:20px;
+            }
+        }
+    }
+
+    .qa {
+        margin: 0 50px;
+        h5 {
+            height: 36px;
+            line-height: 36px;
+            font-size: 32px;
+            font-weight: 400;
+            color: #CCCCCC;
+            line-height: 36px;
+            padding-bottom:30px;
+        }
+
+        dl {
+            padding-bottom:20px;
+            dt {
+                font-size: 24px;
+                font-weight: 400;
+                color: #CCCCCC;
+                line-height: 36px;
+            }
+            dd {
+                font-size: 20px;
+                font-weight: 400;
+                color: #808080;
+                line-height: 36px;
+                p {
+                    margin-bottom:10px;
+                }
+                ul {
+                    padding-left:20px;
+                }
+                a {
+                    color:#3919F0;
+                }
             }
         }
     }
@@ -730,6 +781,132 @@
                 font-size: 2.4vw;
                 line-height: 2.8vw;
                 margin: 0 3vw;
+            }
+        }
+
+        .spaceInfo{
+            margin:0 5vw 5vw;
+            display:block;
+            .userInfo {
+                display:flex;
+                align-items: center;
+                .avatar {
+                    width:8vw;
+                    height:8vw;
+                    border-radius:100%;
+                    overflow:hidden;
+                    margin-right:10px;
+                    img {
+                        display:block;
+                        width:100%;
+                        height:100%;
+                    }
+                }
+                .info {
+                    div {
+                        font-size: 6vw;
+                        font-weight: 400;
+                        color: #FFFFFF;
+                        line-height: 6.8vw;
+                    }
+                    p {
+                        font-size: 4vw;
+                        font-weight: 400;
+                        color: #999999;
+                        line-height: 4.4vw;
+                        vertical-align: top;
+                    }
+                }
+            }
+            ul {
+                width:100%;
+                li {
+                  
+                    em {
+                        font-size: 8vw;
+                        line-height: 10vw;
+                        font-style: normal;
+                    }
+                    p {
+                        font-size: 3vw;
+                        line-height: 3.4vw;
+                    }
+                }
+            }
+        }
+        .listener {
+            margin: 0 5vw 5vw;
+            padding:1vw;
+            .info {
+                a {
+                    float:right;
+                    i {
+                        display:block;
+                        background:url(~@/assets/images/airdrop/twitter.png) no-repeat;
+                        background-size:100%;
+                        width:8vw;
+                        height:8vw;
+                    }
+                }
+                
+                span  {
+                    font-size: 3vw;
+                    line-height: 3.4vw;
+                }
+                em {
+                    font-size: 3vw;
+                    line-height: 3.4vw;
+                    margin-left:20px;
+                }
+            }
+    
+            h4 {
+                font-size: 3.6vw;
+                line-height: 3.8vw;
+            }
+    
+            .peoples {
+                padding-top:20px;
+                img {
+                    width:8vw;
+                    height:8vw;
+                    border-radius: 100%;
+                    border: 2px solid #000000;
+                    overflow: hidden;
+                    margin-left:-3.6vw;
+                    vertical-align: top;
+                    &:nth-of-type(1){
+                        margin-left:0;
+                    }
+                }
+                span {
+                    font-size: 3.2vw;
+                    line-height: 9vw;
+                    vertical-align: top;
+                    margin-left:20px;
+                }
+            }
+        }
+
+        .qa {
+            margin:0 5vw 5vw;
+            h5 {
+                font-size:4vw;
+                padding-bottom:2vw;
+            }
+
+            dl {
+                padding-bottom:1.5vw;
+                dt {
+                    font-size:3.6vw;
+                    line-height: 4vw;
+                    color:#ccc;
+                }
+                dd {
+                    font-size:3vw;
+                    line-height: 3.2vw;
+                    color:#808080;
+                }
             }
         }
     }

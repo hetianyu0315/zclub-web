@@ -22,7 +22,7 @@ export default function IndexPage() {
                 <p>You earn in-app tokens only when you are an NFT holder</p>
             </dt>
             <dd>
-                <img src={Img01} width="70%" alt="" />
+                <img src={Img01} className={styles.imgWidth2} alt="" />
             </dd>
         </dl>
         <dl>
@@ -30,7 +30,7 @@ export default function IndexPage() {
                 <h3>2. Get a SeatNFT from in-app marketplace</h3>
             </dt>
             <dd>
-                <img src={Img02} width="70%" alt="" />
+                <img src={Img02} className={styles.imgWidth} alt="" />
             </dd>
         </dl>
         <dl>
@@ -51,7 +51,7 @@ export default function IndexPage() {
                 <h3>4. Equip your NFTs and start to talk Burn energy and earn handsome rewards</h3>
             </dt>
             <dd>
-                <img src={Img04} width="70%" alt="" />
+                <img src={Img04}  className={styles.imgWidth} alt="" />
             </dd>
         </dl>
         <dl>
@@ -59,7 +59,7 @@ export default function IndexPage() {
                 <h3>5. SocialFi and GameFi</h3>
             </dt>
             <dd>
-                <img src={Img05} width="70%" alt="" />
+                <img src={Img05}  className={styles.imgWidth} alt="" />
             </dd>
         </dl>
         <dl>
