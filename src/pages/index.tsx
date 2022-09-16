@@ -22,14 +22,17 @@ export default function HomePage() {
     toast('coming soon');
   }
   return (
-    <div>
+    <div className={styles.wrap}>
       <div className={styles.headbox}>
-        <div className={styles.part01}>
-          <img src={headImgSvg} />
+        <div className={styles.part01_bg}>
+        <div className={styles.part01_content}>
+          <img src={require('@/assets/images/img_head_1.svg')} />
           <p>Leading audio-focused social app that<br/>enables users to talk to earn and get<br/> revenue share from live gifting.</p>
         </div>
+        </div>
+        
         <div className={styles.part02}>
-          <img src={headRoadSvg} />
+          <img src={require('@/assets/images/img_road.svg')} />
           <p>Our purpose is to be the leading audio chat app that enable users<br/> to talk to earn. Users buy a SeatNFT to start, and build social<br/> connections in the Social-Fi and Game-Fi app and get revenue<br/> share from Live gifting. </p>
         </div>
       </div>
