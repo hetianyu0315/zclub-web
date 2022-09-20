@@ -8,7 +8,8 @@ import useLogin from '../useLogin'
 import ImgBack from '@/assets/images/airdrop/arrow_back.svg';
 
 export default function IndexPage(){
-    const {token} = useLogin()
+    const {getToken} = useLogin()
+    const token = getToken();
     const [userInfo,setUserInfo] = useState<Record<string,any>>({});
 
     const [val,setVal] = useState('')

@@ -1,19 +1,31 @@
 import React, { useEffect, useState, useRef } from 'react';
 
 interface LoginInfo {
-    isLogin: string
-    twitter: boolean
-    follow: boolean
-    discord: boolean
-    isDone: boolean
+    isLogin?: string
+    twitter?: boolean
+    follow?: boolean
+    discord?: boolean
+    isDone?: boolean
 }
 
 const useLogin = ()=>{
-    const [token, setToken] = useState(localStorage.getItem('airdropTk'));
-    const [loginInfo, setLoginInfo] = useState<LoginInfo>(JSON.parse(localStorage.getItem('userInfo') || '{}'))
+    const [token, setToken] = useState<string|null|boolean>(false);
+    const [loginInfo, setLoginInfo] = useState<LoginInfo>({})
+
+    useEffect(()=>{
+        setToken(localStorage.getItem('airdropTk'));
+        setLoginInfo(JSON.parse(localStorage.getItem('userInfo') || '{}'));
+    },[])
+
+    const getToken = ()=>{
+        return token;
+    }
+    const getLoginInfo = ()=>{
+        return loginInfo;
+    }
 
     return {
-        token,loginInfo,setLoginInfo,setToken
+        getToken,getLoginInfo,setLoginInfo,setToken
     }
 }
 

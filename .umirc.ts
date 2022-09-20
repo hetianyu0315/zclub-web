@@ -48,6 +48,13 @@ export default {
       content: 'https://zclub.app/img_tweet.png'
     }
   ],
+  links:[{
+    ref:'preload',
+    href:'https://fonts.gstatic.com/s/archivoblack/v17/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf',
+    as:'font',
+    type:'font/ttf',
+    crossorigin:'anonymous'
+  }],
   routes: [
     {
       path: '/airdrop',
@@ -80,6 +87,7 @@ export default {
       ],
     },
   ],
+  ssr:{},
   exportStatic: {
   },
   dynamicImport: {
@@ -91,6 +99,17 @@ export default {
     hmr: false
   },
   webpack5:{},
+  analyze: {
+    analyzerMode: 'server',
+    analyzerPort: 8888,
+    openAnalyzer: true,
+    // generate stats file while ANALYZE_DUMP exist
+    generateStatsFile: false,
+    statsFilename: 'stats.json',
+    logLevel: 'info',
+    defaultSizes: 'parsed', // stat  // gzip
+  },
+  chunks: ['vendors','commons', 'umi'],
   chainWebpack(memo, { env, webpack }) {
     memo.module.rule('svga')
       .test(/\.svga$/)
@@ -103,6 +122,22 @@ export default {
       .test(/\.css$/)
       .sideEffects(true);
     
+    memo.optimization.splitChunks({
+      cacheGroups: {
+        vendors: {
+          name: 'vendors',
+          chunks: 'all',
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router|react-router-dom|react-redux|redux|redux-saga|umi|dva|dva-core|dva-loading|(\@babel)|core-js|dayjs|axios|lodash)[\\/]/,
+        },
+        commons: {
+          name: 'commons',
+          chunks: 'async',
+          minChunks: 2,
+          minSize: 0,
+        },
+      },
+    });
+    
     return memo;
-  },
+  }
 };

@@ -28,9 +28,10 @@ export default function Svga(props:SvgaProps) {
         const callback = function(mutationsList:any, observer:any) {
             for(let mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName == 'class') {
-                    const _class = Array.from(mutation.target.classList);
-                    if(_class.indexOf('animate')>=0){
-                        setAni(true);
+                    if(mutation.target.classList.contains('animate')){
+                        if(!ani){
+                            setAni(true);
+                        }
                     }else{
                         setAni(false);
                     }
@@ -44,6 +45,10 @@ export default function Svga(props:SvgaProps) {
             characterData: true ,
             attributeFilter: ['class']
         });
+
+        // if(window.document.body.classList.contains('animate')){
+        //     setAni(true);
+        // }
 
         return ()=>{
             observer && observer.disconnect()
