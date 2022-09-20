@@ -29,7 +29,9 @@ export default function Svga(props:SvgaProps) {
             for(let mutation of mutationsList) {
                 if (mutation.type === 'attributes' && mutation.attributeName == 'class') {
                     if(mutation.target.classList.contains('animate')){
-                        setAni(true);
+                        if(!ani){
+                            setAni(true);
+                        }
                     }else{
                         setAni(false);
                     }
@@ -44,9 +46,9 @@ export default function Svga(props:SvgaProps) {
             attributeFilter: ['class']
         });
 
-        if(window.document.body.classList.contains('animate')){
-            setAni(true);
-        }
+        // if(window.document.body.classList.contains('animate')){
+        //     setAni(true);
+        // }
 
         return ()=>{
             observer && observer.disconnect()

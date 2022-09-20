@@ -13,7 +13,7 @@ export default function IndexPage(){
         <div className={styles.opts}>
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/airdrop/index/" className={styles.active}>ZClubNFT</a></li>
+                <li><a href="/airdrop/" className={styles.active}>ZClubNFT</a></li>
             </ul>
         </div>
     </div>
