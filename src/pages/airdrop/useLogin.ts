@@ -9,7 +9,7 @@ interface LoginInfo {
 }
 
 const useLogin = ()=>{
-    const [token, setToken] = useState<string|null>('');
+    const [token, setToken] = useState<string|null|boolean>(false);
     const [loginInfo, setLoginInfo] = useState<LoginInfo>({})
 
     useEffect(()=>{
