@@ -1,9 +1,19 @@
-import * as echarts from "echarts";
+import * as echarts from 'echarts/lib/echarts';
+import { DataZoomComponent } from 'echarts/components';
+import { TooltipComponent } from 'echarts/components';
+import { LegendComponent } from 'echarts/components';
+import { GridComponent } from 'echarts/components';
+import { LineChart } from 'echarts/charts';
+import type {EChartsOption} from 'echarts'
 import React, { useEffect, useRef } from "react";
 import getMobile from 'is-mobile';
 import {time_frame,seriesData} from './data';
 
-type EChartsOption = echarts.EChartsOption;
+echarts.use([DataZoomComponent]);
+echarts.use([TooltipComponent]);
+echarts.use([LegendComponent]);
+echarts.use([GridComponent]);
+echarts.use([LineChart]);
 
 const isMobile = getMobile()
 const toPercentage = (value: number) => value.toFixed(1) + "%";

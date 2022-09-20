@@ -1,12 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import { NavLink,  Link } from 'umi';
-import  { useLogin } from '@/components/hooks/login';
 import styles from './index.less';
 
 export default function Layout(props:any) {
-  const { isLogin } = useLogin();
   const [act,setAct] = useState('');
-  const [goUrl, setGoUrl] = useState(isLogin?'/referral/mission':'/referral');
+  const [goUrl, setGoUrl] = useState('/referral');
   
   const barClick = ()=>{
     if(act==''){
@@ -17,12 +15,12 @@ export default function Layout(props:any) {
   }
 
   useEffect(()=>{
-    if(isLogin){
+    if(localStorage.getItem('token')){
       setGoUrl('/referral/mission')
     }else{
       setGoUrl('/referral')
     }
-  },[isLogin])
+  },[])
 
   return (
     <>

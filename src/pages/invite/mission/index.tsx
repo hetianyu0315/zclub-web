@@ -61,12 +61,11 @@ export default function IndexPage(){
     }
 
     useEffect(()=>{
-        if(isLogin){
-            GetInfo()
-        }else{
+        if(isLogin===false){
             history.push('/referral/')
+        }else if(isLogin){
+            GetInfo()
         }
-        
     },[isLogin])
 
     useEffect(()=>{
