@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="946px" height="357px" viewBox="0 0 946 357" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="1040px" height="356px" viewBox="0 0 1040 356" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>img_road</title>
     <defs>
         <linearGradient x1="66.7786236%" y1="-4.0016967%" x2="66.7786236%" y2="100%" id="linearGradient-1">
@@ -8,8 +8,10 @@
         </linearGradient>
     </defs>
     <g id="首页" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="zclub-home" transform="translate(-159.000000, -973.000000)" fill="url(#linearGradient-1)">
-            <path d="M783.511469,973.771425 C783.511469,973.771425 804.077961,973.771425 804.077961,973.771425 C690.2549,981.150733 1046.08836,1029.94775 1093.95105,1141.67397 C1141.81374,1253.40019 1018.6301,1330 797.970954,1330 C577.311811,1330 235.963371,1330 159.02371,1330 C159.02371,1141.67397 815.502731,1133.4558 879.425052,1080.50875 C943.347374,1027.5617 650.064727,973.771425 783.511469,973.771425 Z" id="img_road"></path>
+        <g id="zclub-home" transform="translate(-120.000000, -800.000000)" fill="url(#linearGradient-1)">
+            <g id="img_road" transform="translate(120.000000, 800.000000)">
+                <path d="M731.077961,0 C617.2549,7.37457304 981.947042,56.5942145 1029.80973,168.248745 C1036.91468,184.823231 1040,203.006647 1040,217.898685 C1040,303.596791 911.903536,356 724,356 L0,356 C0,167.794812 742.502731,159.581918 806.425052,106.668838 C869.708151,54.2848893 582.89466,1.0750309 706.635301,0.0160721291 L731.077961,0 Z"></path>
+            </g>
         </g>
     </g>
 </svg>
