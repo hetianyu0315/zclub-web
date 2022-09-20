@@ -28,12 +28,11 @@ const formatDate = (str: string) => {
 export default function IndexPage() {
     const ref = useRef<HTMLDivElement>(null)
     const ref2 = useRef<any>(null)
-    const { loginInfo, setLoginInfo } = useLogin()
-    const [token, setToken] = useState(localStorage.getItem('airdropTk'));
-    const [twitter, setTwitter] = useState(loginInfo.twitter);
-    const [follow, setFollow] = useState(loginInfo.follow);
+    const { getLoginInfo, setLoginInfo, getToken, setToken } = useLogin()
+    const [twitter, setTwitter] = useState<boolean|undefined>();
+    const [follow, setFollow] = useState<boolean|undefined>();
     const [discordJoin, setDiscordJoin] = useState('');
-    const [discord, setDiscord] = useState(loginInfo.discord);
+    const [discord, setDiscord] = useState<boolean|undefined>();
     const [msg, setMsg] = useState('')
     const [btnLoad, setBtnLoad] = useState(false);
     const [btnLoad2, setBtnLoad2] = useState(false);
@@ -48,6 +47,15 @@ export default function IndexPage() {
     const [twitterInfo, setTwitterInfo] = useState<Record<string, any>>({});
     const [summary, setSummary] = useState<Record<string, any>>({});
     const [loading, setLoading] = useState(false);
+
+    const loginInfo = getLoginInfo();
+    const token = getToken();
+
+    useEffect(()=>{
+        setTwitter(loginInfo.twitter);
+        setFollow(loginInfo.follow);
+        setDiscord(loginInfo.discord);
+    },[loginInfo])
 
 
     const goFollow = () => {
@@ -322,9 +330,8 @@ export default function IndexPage() {
 
 
 
-
+    console.log('res==',follow,twitter)
     return <>
-
         <div className={styles.main}>
             {loginInfo.isLogin == 'true' ? <>
                 <div className={styles.box2}>

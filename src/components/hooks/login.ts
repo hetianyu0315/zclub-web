@@ -2,8 +2,8 @@ import {useState,useEffect} from 'react';
 import {history} from 'umi'
 
 export function useLogin(){
-    const _token = localStorage.getItem('token');
-    const [isLogin,_setLogin] = useState(_token);
+    let _token:string|null|boolean = '';
+    const [isLogin,_setLogin] = useState<string|null|boolean>('');
     const setLogin = (val:string)=>{
         if(val){
             localStorage.setItem('token',val);
@@ -16,10 +16,13 @@ export function useLogin(){
     }
 
     useEffect(()=>{
+        _token = localStorage.getItem('token');
         if(_token){
             _setLogin(_token);
+        }else{
+            _setLogin(false);
         }
-    },[_token])
+    },[])
 
     return {
         isLogin,
