@@ -495,7 +495,7 @@ export default function IndexPage() {
                 <div className={styles.box}>
                     <img src={Img} alt="" />
                     <h2>ZCLUB NFT</h2>
-                    <p>Millions of people contribute to Twitter Space, but they have no return. ZCLUB is making something change.</p>
+                    <p>Millions of people contribute to Twitter Space, but they have no return. ZClub is making a change.</p>
                     <ul>
                         <li>Airdrop to Twitter Space users with no gas.</li>
                         <li>The credential for claiming future airdrops.</li>
