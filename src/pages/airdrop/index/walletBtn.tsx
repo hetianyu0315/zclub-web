@@ -8,7 +8,8 @@ import useLogin from '../useLogin'
 
 export default function WalletBtn(props: any) {
     const { connecting, connected, signMessage, publicKey, connect, wallet } = useWallet();
-    const { token, setToken } = useLogin();
+    const { getToken, setToken } = useLogin();
+    const token = getToken();
     const [nonce, setNonce] = useState('');
     const content = useMemo(() => {
         if (connecting) return 'Connecting ...';

@@ -20,10 +20,7 @@ const Ctx: FC<{ children: ReactNode}> = (props) => {
 };
 
 const Context: FC<{ children: ReactNode }> = ({ children }) => {
-    const [userInfo] = useState(JSON.parse(localStorage.getItem('userInfo')||'{}'))
-    const [isAuto] = useState(userInfo.isLogin=='true');
-    //const isAuto = false
-    console.log('isAuto',isAuto)
+
     // The network can be set to 'devnet', 'testnet', or 'mainnet-beta'.
     const network = WalletAdapterNetwork.Mainnet;
 
