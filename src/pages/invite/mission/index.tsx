@@ -27,7 +27,7 @@ export default function IndexPage(){
     const GetInfo = ()=>{
         axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
             headers:{
-                'Authorization':`HIN ${isLogin}`
+                'Authorization':`HIN ${localStorage.getItem('token')}`
             }
         },).then((res)=>{
             const {total_point,daily_point,referred,point_conf,user_bindings,id,daily_refer_point} = res.data.data;
@@ -104,7 +104,7 @@ export default function IndexPage(){
             ...data,
         },{
             headers:{
-                'Authorization':`HIN ${isLogin}`
+                'Authorization':`HIN ${localStorage.getItem('token')}`
             }
         },).then((res)=>{
            toast('bind success');
@@ -192,7 +192,7 @@ export default function IndexPage(){
                         </div>
                     </a>
                 </li>
-                <li>
+                {/* <li>
                     <a {...walletProps}>
                         <div className={styles.left}>
                             <div>Add Wallet</div>
@@ -206,7 +206,7 @@ export default function IndexPage(){
                             <div>ACE Per Day</div>
                         </div>
                     </a>
-                </li>
+                </li> */}
             </ul>
         </div>}
         </>

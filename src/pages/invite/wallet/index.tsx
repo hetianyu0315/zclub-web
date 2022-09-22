@@ -36,7 +36,7 @@ export default function IndexPage(){
                 'bind_id': addr
             },{
                 headers:{
-                    'Authorization':`HIN ${isLogin}`
+                    'Authorization':`HIN ${localStorage.getItem('token')}`
                 }
             },).then((res)=>{
                toast('bind success');
