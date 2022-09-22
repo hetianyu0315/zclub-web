@@ -5,6 +5,11 @@ export default {
     {
       name: 'keywords',
       content:
+        'Leading audio-focused social app that enable users to earn revenue share, web3, NFT, solana, metaverse, crypto, airdrop, toEarn, sol, ETH, gamefi, socialfi, defi, dex, token, wallet, FTX, phantom, uniswap',
+    },
+    {
+      name: 'description',
+      content:
         'Leading audio-focused social app that enable users to earn revenue share',
     },
     {
