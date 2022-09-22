@@ -24,7 +24,7 @@ export default function IndexPage(){
             "bind_id":val
         },{
             headers:{
-                'Authorization':`HIN ${token}`
+                'Authorization':`HIN ${localStorage.getItem('airdropTk')}`
             }
         }).then(res=>{
             if(res.data.code == 0){
@@ -50,7 +50,7 @@ export default function IndexPage(){
     const getUserInfo = ()=>{
         axios.get(`${api}/v1/users/me?pkg=app.zclub`,{
             headers:{
-                'Authorization':`HIN ${token}`
+                'Authorization':`HIN ${localStorage.getItem('airdropTk')}`
             }
         }).then(res=>{
             if(res.data.code == 0){
