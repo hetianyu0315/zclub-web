@@ -22,6 +22,7 @@ import downImg from '@/assets/images/airdrop/down.png';
 import cardHost from '@/assets/images/airdrop/host.svg';
 import cardListener from '@/assets/images/airdrop/listener.svg';
 import cardSpeaker from '@/assets/images/airdrop/speaker.svg';
+import tmpImg from '@/assets/images/airdrop/twitter.png'
 
 const _msg =
   'Due to Twitter API limitations, the ZClub bot does not have capture your Space list. Please participate in more Twitter Spaces, then return to the page to refresh. Thank you for your patience and understanding :)';
@@ -132,7 +133,7 @@ export default function IndexPage() {
     axios
       .post(`${api}/v1/poster/claim?pkg=app.zclub`, formData, {
         headers: {
-          Authorization: `HIN ${token}`,
+          Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
       })
       .then((res) => {
@@ -194,7 +195,7 @@ export default function IndexPage() {
     axios
       .get(`${api}/v1/poster/share`, {
         headers: {
-          Authorization: `HIN ${token}`,
+          Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
       })
       .then((res) => {
@@ -217,7 +218,7 @@ export default function IndexPage() {
     axios
       .get(`${api}/v1/users/me/space?pkg=app.zclub`, {
         headers: {
-          Authorization: `HIN ${token}`,
+          Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
       })
       .then((res) => {
@@ -227,6 +228,7 @@ export default function IndexPage() {
           setTwitterInfo(res.data.data.user);
           setSummary(res.data.data.summary);
           setPrevImg(res.data.data.poster_url);
+          const loginInfo = JSON.parse(localStorage.getItem('userInfo')||'{}')
           if (!res.data.data.is_claim) {
             localStorage.setItem(
               'userInfo',
@@ -267,7 +269,7 @@ export default function IndexPage() {
     axios
       .get(`${api}/v1/users/me?pkg=app.zclub`, {
         headers: {
-          Authorization: `HIN ${token}`,
+          Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
       })
       .then((res) => {
@@ -283,7 +285,7 @@ export default function IndexPage() {
           //setDiscord(false);
           const loc_store = {
             twitter: false,
-            discord: discord,
+            discord: JSON.parse(localStorage.getItem('userInfo')||'{}').discord,
           };
           (user_bindings || []).forEach((item: any) => {
             if (item.bind_type == 'twitter') {
@@ -294,6 +296,7 @@ export default function IndexPage() {
               loc_store.discord = true;
             }
           });
+          
           localStorage.setItem(
             'userInfo',
             JSON.stringify({
@@ -463,7 +466,7 @@ export default function IndexPage() {
                             <span>
                               {discordTxt}{' '}
                               <a
-                                className={styles.color02}
+                                className={styles.color01}
                                 href={discordUrl}
                                 onClick={goDiscord}
                                 target="_blank"
@@ -491,7 +494,7 @@ export default function IndexPage() {
               <div className={styles.spaceInfo}>
                 <div className={styles.userInfo}>
                   <div className={styles.avatar}>
-                    <img src={twitterInfo.avatar_url} alt="" />
+                    <img src={twitterInfo.avatar_url} alt="" onError={(e)=>e.target.src=tmpImg}/>
                   </div>
                   <div className={styles.info}>
                     <div>{twitterInfo.display_name}</div>
@@ -537,7 +540,7 @@ export default function IndexPage() {
                 <h4>{item.title}</h4>
                 <div className={styles.peoples}>
                   {item.listeners.slice(0, 5).map((it: any) => (
-                    <img src={it.avatar_url} alt="" />
+                    <img src={it.avatar_url} alt="" onError={(e)=>e.target.src=tmpImg}/>
                   ))}
                   <span>{item.total_live_listeners} Listeners</span>
                 </div>
@@ -703,7 +706,7 @@ export default function IndexPage() {
             <div className={styles.type}>Listener</div>
             <div className={styles.user_info}>
               <div>
-                <img src={twitterInfo.avatar_url} alt="" />
+                <img src={twitterInfo.avatar_url} onError={(e)=>e.target.src=tmpImg} alt="" />
                 <i></i>
               </div>
               <span>@{twitterInfo.twitter_screen_name}</span>

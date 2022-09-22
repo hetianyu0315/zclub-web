@@ -41,7 +41,7 @@ export default function IndexPage(){
     useEffect(()=>{
         axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
             headers:{
-                'Authorization':`HIN ${isLogin}`
+                'Authorization':`HIN ${localStorage.getItem('token')}`
             }
         }).then((res)=>{
             const {total_point,daily_point,referred,id} = res.data.data;
