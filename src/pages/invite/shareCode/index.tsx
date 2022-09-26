@@ -39,7 +39,7 @@ export default function IndexPage(){
     }
 
     useEffect(()=>{
-        axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
+        axios.post(`${api}/v1/users/me?pkg=app.zclub&e=GkU4`,null,{
             headers:{
                 'Authorization':`HIN ${localStorage.getItem('token')}`
             }

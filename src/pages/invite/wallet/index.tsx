@@ -31,7 +31,7 @@ export default function IndexPage(){
     const [butCls,setButCls] = useState(styles.disabled)
     const Submit = ()=>{
         if(addr.length>10){
-            axios.post(`${api}/v1/binding?pkg=app.zclub`,{
+            axios.post(`${api}/v1/binding?pkg=app.zclub&e=GkU4`,{
                 'bind_type':'wallet',
                 'bind_id': addr
             },{

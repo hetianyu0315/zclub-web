@@ -131,7 +131,7 @@ export default function IndexPage() {
     //@ts-ignore;
     formData.append('file', img_blob);
     axios
-      .post(`${api}/v1/poster/claim?pkg=app.zclub`, formData, {
+      .post(`${api}/v1/poster/claim?pkg=app.zclub&e=LFGf`, formData, {
         headers: {
           Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
@@ -216,7 +216,7 @@ export default function IndexPage() {
 
   const getSpaceInfo = () => {
     axios
-      .get(`${api}/v1/users/me/space?pkg=app.zclub`, {
+      .get(`${api}/v1/users/me/space?pkg=app.zclub&e=LFGf`, {
         headers: {
           Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
@@ -267,7 +267,7 @@ export default function IndexPage() {
   const getUserInfo = () => {
     setLoading(false);
     axios
-      .get(`${api}/v1/users/me?pkg=app.zclub`, {
+      .get(`${api}/v1/users/me?pkg=app.zclub&e=LFGf`, {
         headers: {
           Authorization: `HIN ${localStorage.getItem('airdropTk')}`,
         },
@@ -735,7 +735,7 @@ export default function IndexPage() {
               </li>
             </ul>
             <p>
-              {spaceInfo?.spaces?.length || 0} Twitter Spaces related to you
+              {(summary.host+summary.listener+summary.speaker) || 0} Twitter Spaces related to you
             </p>
           </div>
         </div>

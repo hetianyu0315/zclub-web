@@ -25,7 +25,7 @@ export default function IndexPage(){
     const [loading, setLoading] = useState(true);
 
     const GetInfo = ()=>{
-        axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
+        axios.post(`${api}/v1/users/me?pkg=app.zclub&e=GkU4`,null,{
             headers:{
                 'Authorization':`HIN ${localStorage.getItem('token')}`
             }
@@ -99,7 +99,7 @@ export default function IndexPage(){
     }
 
     const Bind = (data:Record<string,any>,type:string)=>{
-        axios.post(`${api}/v1/binding?pkg=app.zclub`,{
+        axios.post(`${api}/v1/binding?pkg=app.zclub&e=GkU4`,{
             'bind_type':type,
             ...data,
         },{

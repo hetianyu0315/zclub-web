@@ -37,7 +37,7 @@ export default function IndexPage(){
             return;
         }
        
-        axios.post(`${api}/v1/auth/otp?&pkg=app.zclub`,{
+        axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
             email,
         }).then(()=>{
             setStep('3')
@@ -73,7 +73,7 @@ export default function IndexPage(){
     const Submit =async ()=>{
         if(butCls==''){
             try{
-                let res = await axios.post(`${api}/v1/auth/login?&refer=${code}&pkg=app.zclub`,{
+                let res = await axios.post(`${api}/v1/auth/login?&refer=${code}&pkg=app.zclub&e=GkU4`,{
                     email,
                     code:otp,
                     login_type: "email",
@@ -95,7 +95,7 @@ export default function IndexPage(){
     }
     const sendCode = ()=>{
         if(count==0){
-            axios.post(`${api}/v1/auth/otp?&pkg=app.zclub`,{
+            axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
                 email,
             }).then(()=>{
                 setCodeTxt('Send Again')
