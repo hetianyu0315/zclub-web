@@ -43,7 +43,7 @@ export default function IndexPage(){
             let _bind:Record<string,any> = {};
             (user_bindings||[]).forEach((item:Record<string,any>)=>{
                 _bind[item.bind_type] = true;
-                if(item.bind_type=='wallet'){
+                if(item.bind_type=='solana'){
                     dispatch({
                         type:'invite/setWallet',
                         payload:{
@@ -126,15 +126,17 @@ export default function IndexPage(){
     }
 
     const walletProps = {
-        //href:bindAccount['wallet']?"#":"/referral/wallet"
-        href:'#',
-        onClick:()=>{
-            toast(`Link Wallet is closed`)
-        }
+        href:bindAccount['solana']?"#":"/referral/wallet",
+        //href:'#',
+        // onClick:()=>{
+        //     if(bindAccount['solana']){
+        //         toast(`Wallet is bind`)
+        //     } 
+        // }
     }
 
     return <>
-        <div className={styles.back} onClick={()=>history.push('/')}></div>
+        <div className={styles.back_box}><div className={styles.back} onClick={()=>history.push('/')}></div></div>
         {loading?<Loading/>:
         <div className={styles.main}>
             <div className={styles.total}>
@@ -156,7 +158,7 @@ export default function IndexPage(){
                             <div>&nbsp;</div>
                             {
                                 bindAccount['twitter']?<span className={styles.comp}>Complete</span>:<span>GO!</span>
-                            }                            
+                            }                       
                         </div>
                         <div className={styles.right}>
                             <em>+10</em>
@@ -192,13 +194,13 @@ export default function IndexPage(){
                         </div>
                     </a>
                 </li>
-                {/* <li>
+                <li>
                     <a {...walletProps}>
                         <div className={styles.left}>
                             <div>Add Wallet</div>
                             <div>Link</div>
                             {
-                                bindAccount['wallet']?<span className={styles.comp}>Complete</span>:<span>GO!</span>
+                                bindAccount['solana']?<span className={styles.comp}>Complete</span>:<span>GO!</span>
                             }   
                         </div>
                         <div className={styles.right}>
@@ -206,7 +208,7 @@ export default function IndexPage(){
                             <div>ACE Per Day</div>
                         </div>
                     </a>
-                </li> */}
+                </li>
             </ul>
         </div>}
         </>

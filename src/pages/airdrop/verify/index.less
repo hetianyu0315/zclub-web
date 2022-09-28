@@ -1,178 +1,282 @@
+@import '~@/layouts/base.less';
 .main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top:45px;
-    .box {
-        background: #FFD500;
-        border-radius: 40px;
-        overflow:hidden;
-        padding:20px 50px;
-        margin: 0 50px;
+  max-width: 1100/@base_val;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-top: 45/@base_val;
+  padding-bottom:45/@base_val;
+  
+  .box {
+    background: #ffd500;
+    border-radius: 40/@base_val;
+    overflow: hidden;
+    padding: 20/@base_val 50/@base_val 40/@base_val;
+    margin: 0 50/@base_val;
 
-        .back {
-            a {
-                img {
-                    width:48px;
-                    height:48px;
-                    vertical-align: middle;
-                    margin-right:10px;
-                }
-                font-size: 30px;
-                font-weight: 400;
-                color: #000000;
-                line-height: 48px;
-                text-decoration: none;
-            }
+    .back {
+        line-height: 0;
+      a {
+        img {
+          width: 48/@base_val;
+          height: 48/@base_val;
+          vertical-align: middle;
+          margin-right: 10/@base_val;
         }
-
-        h3 {
-            font-size: 60px;
-            font-weight: 400;
-            color: #000000;
-            line-height: 80px;
-            padding-top:10px;
-        }
-
-        dl {
-            dt {
-                font-size: 32px;
-                font-weight: 400;
-                color: #000000;
-                line-height: 42px;
-                padding-top:10px;
-            }
-
-            dd {
-                p {
-                    font-size: 20px;
-                    font-weight: 400;
-                    color: #000000;
-                    line-height: 36px;
-                }
-
-                input {
-                    display:block;
-                    width: 541px;
-                    height: 60px;
-                    line-height: 60px;
-                    background: #FFFFFF;
-                    border-radius: 46px;
-                    border: 1px solid #979797;
-                    font-size: 20px;
-                    font-weight: 400;
-                    color: #999999;
-                    padding:0 10px;
-                    box-sizing: border-box;
-                    margin:10px 0; 
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
-                    outline: none;
-                }
-            }
-
-            &:nth-of-type(1){
-                button {
-                    width: 240px;
-                    height: 60px;
-                    line-height: 60px;
-                    background: #199CF0;
-                    border-radius: 46px;
-                    font-size: 30px;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                    border:0;
-                    margin-top:10px;
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
-                    cursor: pointer;
-                }
-            }
-            &:nth-of-type(2){
-                padding-top:60px;
-                button {
-                    width: 240px;
-                    height: 60px;
-                    line-height: 60px;
-                    background: #000;
-                    border-radius: 46px;
-                    font-size: 30px;
-                    font-weight: 400;
-                    color: #FFFFFF;
-                    border:0;
-                    margin-top:10px;
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
-                    cursor: pointer;
-                }
-            }
-        }
+        font-size: 0.3rem;
+        font-weight: 400;
+        color: #000000;
+        line-height: 48/@base_val;
+        text-decoration: none;
+      }
     }
 
+    h3 {
+      font-size: 0.6rem;
+      font-weight: 400;
+      color: #000000;
+      line-height: 80/@base_val;
+      padding-top: 10/@base_val;
+    }
+
+    dl {
+      dt {
+        font-size: 0.32rem;
+        font-weight: 400;
+        color: #000000;
+        line-height: 42/@base_val;
+        padding-top: 10/@base_val;
+      }
+
+      dd {
+        line-height: 0;
+        p {
+          font-size: 0.2rem;
+          font-weight: 400;
+          color: #000000;
+          line-height: 36/@base_val;
+        }
+
+        input {
+          display: block;
+          width: 541/@base_val;
+          height: 60/@base_val;
+          line-height: 60/@base_val;
+          background: #ffffff;
+          border-radius: 46/@base_val;
+          border: 1px solid #979797;
+          font-size: 0.2rem;
+          font-weight: 400;
+          color: #999999;
+          padding: 0 10/@base_val;
+          box-sizing: border-box;
+          margin: 10/@base_val 0;
+          outline: none;
+        }
+      }
+
+      &:nth-of-type(1) {
+        button {
+          width: 240/@base_val;
+          height: 60/@base_val;
+          line-height: 60/@base_val;
+          background: #199cf0;
+          border-radius: 46/@base_val;
+          font-size: 30/@base_val;
+          font-weight: 400;
+          color: #ffffff;
+          border: 0;
+          margin-top: 10/@base_val;
+          cursor: pointer;
+        }
+      }
+      &:nth-of-type(2) {
+        padding-top: 60/@base_val;
+        button {
+          width: 240/@base_val;
+          height: 60/@base_val;
+          line-height: 60/@base_val;
+          background: #000;
+          border-radius: 46/@base_val;
+          font-size: 30/@base_val;
+          font-weight: 400;
+          color: #ffffff;
+          border: 0;
+          margin-top: 10/@base_val;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 
-@media screen and (max-width: 768px) { 
-    .main {
-        .box {
-            padding:4vw 4vw;
-            margin:0 5vw;
-            border-radius: 4vw;
-            .back {
-                a {
-                    img {
-                        width:5.6vw;
-                        height:5.6vw;
-                        vertical-align: top;
-                        margin-right:0.5vw;
-                    }
-                    font-size: 5.6vw;
-                    line-height: 5.6vw;
-                }
-            }
-
-            h3 {
-                font-size:7vw;
-                line-height: 9vw;
-            }
-
-            dl {
-                dt {
-                    font-size:6vw;
-                }
-                dd {
-                    p {
-                        font-size:4vw;
-                        line-height: 4.4vw;
-                    }
-                    input {
-                        width: 60vw;
-                        height: 8vw;
-                        line-height: 8vw;
-                        border-radius: 8vw;
-                        font-size: 2.4vw;
-                        padding:0 1vw;
-                        margin:1vw 0; 
-                    }
-                }
-
-                &:nth-of-type(1){
-                    button {
-                        width: 30vw;
-                        height: 8vw;
-                        line-height: 8vw;
-                        border-radius: 4vw;
-                        font-size: 2vw;
-                        margin-top:1vw;
-                    }
-                }
-                &:nth-of-type(2){
-                    padding-top:3vw;
-                    button {
-                        width: 30vw;
-                        height: 8vw;
-                        line-height: 8vw;
-                        border-radius: 4vw;
-                        font-size: 2vw;
-                        margin-top:1vw;
-                    }
-                }
-            }
+@media screen and (max-width: 768px) {
+  .main {
+    width:100%;
+    max-width: 100%;
+    .box {
+      padding: 4vw 4vw;
+      margin: 0 5vw;
+      border-radius: 4vw;
+      .back {
+        padding-bottom:2vw;
+        a {
+          img {
+            width: 6vw;
+            height: 6vw;
+            vertical-align: top;
+            margin-right: 0.5vw;
+          }
+          font-size: 4.6vw;
+          line-height: 6vw;
         }
+      }
+
+      h3 {
+        font-size: 6vw;
+        font-weight: bold;
+        line-height: 9vw;
+      }
+
+      dl {
+        dt {
+          font-size: 5.6vw;
+          line-height: 6.8vw;
+        }
+        dd {
+          p {
+            font-size: 4vw;
+            line-height: 5.2vw;
+          }
+          input {
+            width: 70vw;
+            height: 8vw;
+            line-height: 8vw;
+            border-radius: 8vw;
+            font-size: 3vw;
+            padding: 0 1vw;
+            margin: 2vw 0;
+          }
+        }
+
+        &:nth-of-type(1) {
+          button {
+            width: 28vw;
+            height: 8vw;
+            line-height: 8vw;
+            border-radius: 4vw;
+            font-size: 4vw;
+            margin-top: 2.4vw;
+          }
+        }
+        &:nth-of-type(2) {
+          padding-top: 3vw;
+          button {
+            width: 30vw;
+            height: 10vw;
+            line-height: 10vw;
+            border-radius: 5vw;
+            font-size: 5vw;
+            margin-top: 3vw;
+          }
+        }
+      }
     }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 896px) {
+  html {
+    font-size: 70px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 80px;
+  }
+}
+@media screen and (min-width: 1152px) {
+  html {
+    font-size: 90px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 100px;
+  }
+  .main {
+    max-width: 1100/@max_val;
+    padding-top: 45/@max_val;
+    padding-bottom:45/@max_val;
+    .box {
+      border-radius: 40/@max_val;
+      padding: 20/@max_val 50/@max_val  40/@max_val;
+      margin: 0 50/@max_val;
+  
+      .back {
+        a {
+          img {
+            width: 48/@max_val;
+            height: 48/@max_val;
+            margin-right: 10/@max_val;
+          }
+          line-height: 48/@max_val;
+        }
+      }
+  
+      h3 {
+        line-height: 80/@max_val;
+        padding-top: 10/@max_val;
+      }
+  
+      dl {
+        dt {
+          line-height: 42/@max_val;
+          padding-top: 10/@max_val;
+        }
+  
+        dd {
+          p {
+            line-height: 36/@max_val;
+          }
+  
+          input {
+            width: 541/@max_val;
+            height: 60/@max_val;
+            line-height: 60/@max_val;
+            border-radius: 46/@max_val;
+            border: 1/@max_val solid #979797;
+            padding: 0 10/@max_val;
+            margin: 10/@max_val 0;
+          }
+        }
+  
+        &:nth-of-type(1) {
+          button {
+            width: 240/@max_val;
+            height: 60/@max_val;
+            line-height: 60/@max_val;
+            border-radius: 46/@max_val;
+            font-size: 30/@max_val;
+            margin-top: 10/@max_val;
+          }
+        }
+        &:nth-of-type(2) {
+          padding-top: 60/@max_val;
+          button {
+            width: 240/@max_val;
+            height: 60/@max_val;
+            line-height: 60/@max_val;
+            border-radius: 46/@max_val;
+            font-size: 30/@max_val;
+            margin-top: 10/@max_val;
+          }
+        }
+      }
+    }
+  }
 }

@@ -53,7 +53,7 @@ export default function IndexPage(){
         })
     },[])
     return <>
-        <div className={styles.back} onClick={()=>history.push('/referral/mission')}></div>
+        <div className={styles.back_box}><div className={styles.back} onClick={()=>history.push('/referral/mission')}></div></div>
         <div className={styles.main}>
             <div className={styles.info}>
                 <div>Add referrals:</div>

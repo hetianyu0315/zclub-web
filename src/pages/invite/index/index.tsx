@@ -159,7 +159,7 @@ export default function IndexPage(){
         {
             step=='2' &&
             <>
-                <div className={styles.back} onClick={()=>setStep('1')}></div>
+                <div className={styles.back_box}><div className={styles.back} onClick={()=>setStep('1')}></div></div>
                 <div className={styles.main2}>
                     <div className={styles.head}>Invite and Earn</div>
                     <p>Please Enter your email for sign up</p>
@@ -179,7 +179,7 @@ export default function IndexPage(){
         {
             step=='3'&&
             <>
-                <div className={styles.back} onClick={()=>setStep('2')}></div>
+                <div className={styles.back_box}><div className={styles.back} onClick={()=>setStep('2')}></div></div>
                 <div className={styles.main3}>
                     <div className={styles.head}>Invite and Earn</div>
                     <p>We've send an OTP to your email. <br/>Please check it!</p>

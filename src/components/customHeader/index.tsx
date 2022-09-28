@@ -2,7 +2,6 @@ import React from 'react';
 import {  useSelector,  } from 'dva';
 import styles from './index.less';
 import  { useLogin } from '@/components/hooks/login';
-import logoSvg from '@/assets/images/logo.svg';
 
 export default function IndexPage(){
     const { isLogin, setLogin } = useLogin();
@@ -15,7 +14,7 @@ export default function IndexPage(){
     return <div className={styles.header}>
         <div className={styles.logo}>
             <a href="/">
-                <img src={logoSvg} alt="" />
+                <img src={require('@/assets/images/logo.png')} alt="" />
             </a>
         </div>
         <div className={styles.opts}>

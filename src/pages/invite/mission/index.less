@@ -1,30 +1,31 @@
+@import '~@/layouts/base.less';
 .main {
-    width:960px;
+    width:960/@base_val;
     margin:0 auto;
     .total {
-        padding-top:20px;
+        padding-top:20/@base_val;
         em {
-            font-size: 40px;
+            font-size: 0.4rem;
             font-weight: 400;
             color: #FFFFFF;
-            line-height: 52px;
+            line-height: 1.4;
             font-style:normal;
         }
         div {
-            height: 52px;
-            font-size: 40px;
+            height: 52/@base_val;
+            font-size: 0.4rem;
             font-weight: 400;
             color: #FFD633;
-            line-height: 52px;
+            line-height: 1;
         }
     }
 
     .preDay {
-        font-size: 20px;
+        font-size: 0.2rem;
         font-weight: 400;
         color:#fff;
-        line-height: 26px;
-        padding-top:10px;
+        line-height: 1.4;
+        padding-top:10/@base_val;
         em {
             color: #FFD633;
             font-style: normal;
@@ -32,11 +33,11 @@
     }
 
     > p {
-        font-size: 20px;
+        font-size: 0.2rem;
         font-weight: 400;
         color: #FFFFFF;
-        line-height: 26px;
-        padding-top:20px;
+        line-height: 1.4;
+        padding-top:20/@base_val;
         em {
             font-style: normal;
             color:#FFD633;
@@ -47,60 +48,62 @@
         display:flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        padding-top:60px;
+        padding-top:60/@base_val;
         li {
-            width:470px;
+            width:470/@base_val;
             box-sizing: border-box;
             background:#000;
-            border: 2px solid #FFD633;
-            margin-bottom:20px;
+            border: 2/@base_val solid #FFD633;
+            margin-bottom:20/@base_val;
+            position:relative;
             cursor:pointer;
             a {
                 color:#FFD633;
                 display:block;
                 overflow:hidden;
-                padding:30px;
-                font-family: ArchivoBlack-Regular, 'Archivo Black';
+                padding:30/@base_val;
+                text-decoration: none;
+                line-height: 0;
             }
             .left {
-                float:left;
                 div {
-                    font-size: 20px;
-                    font-family: ArchivoBlack-Regular, 'Archivo Black';
+                    font-size: 0.2rem;
                     font-weight: 400;
-                    line-height: 26px;
-                    
+                    line-height: 1.4;
                 }
                 span {
-                    height:48px;
-                    line-height: 48px;
+                    height:48/@base_val;
+                    line-height:48/@base_val;
                     display:inline-block;
-                    padding-left:10px;
-                    padding-right:10px;
+                    padding-left:10/@base_val;
+                    padding-right:10/@base_val;
                     border: 2px solid #FFD633;
-                    margin-top:17px;
+                    margin-top:17/@base_val;
+                    font-size:0.2rem;
+                    vertical-align: top;
                     &.comp {
                         background:url('../../../assets/images/invite/icon_complete_yellow.png') no-repeat left center;
-                        background-size:40px 40px;
-                        padding-left:50px;
+                        background-size:40/@base_val 40/@base_val;
+                        padding-left:50/@base_val;
                     }
                 }
             }
             .right {
-                float:right;
+                position:absolute;
+                right:30/@base_val;
+                bottom:30/@base_val;
                 text-align:right;
-                padding-top:26px;
                 em {
-                    font-size: 60px;
+                    font-size: 0.6rem;
                     font-weight: 400;
-                    line-height: 79px;
+                    line-height: 1.4;
                     display:block;
                     font-style: normal;
                 }
                 div {
-                    font-size: 16px;
+                    font-size: 0.2rem;
                     font-weight: 400;
-                    line-height: 20px;
+                    line-height: 1;
                 }
             }
 
@@ -110,14 +113,14 @@
                     color:#000;
                 }
                 background:#FFD633;
-                border: 2px solid #000;
+                border: 2/@base_val solid #000;
                 .left {
                     span {
-                        border: 2px solid #000;
+                        border: 2/@base_val solid #000;
                         &.comp {
                             background:url('../../../assets/images/invite/icon_complete_dark.png') no-repeat left center;
-                            background-size:40px 40px;
-                            padding-left:50px;
+                            background-size:40/@base_val 40/@base_val;
+                            padding-left:50/@base_val;
                         }
                     }
                 }
@@ -128,15 +131,23 @@
     }
 }
 
-.back {
+.back_box {
+    height:0;
     position:absolute;
-    top:30px;
-    left:10px;
-    background:url("../../../assets/images/invite/icon_arrow_back.png") no-repeat;
-    background-size:100%;
-    width:48px;
-    height:48px;
-    cursor: pointer;
+    width:960/@base_val;
+    left:50%;
+    top:0;
+    transform: translate3d(-50%,0,0);
+    .back {
+        position: absolute;
+        top: 30 / @base_val;
+        left: -58 / @base_val;
+        background: url('../../../assets/images/invite/icon_arrow_back.png') no-repeat;
+        background-size: 100%;
+        width: 48 / @base_val;
+        height: 48 / @base_val;
+        cursor: pointer;
+    }
 }
 
 @media screen and (max-width: 768px) { 
@@ -242,8 +253,111 @@
             }
         }
     }
-    .back {
-        width:8vw;
-        height:8vw;
+    .back_box {
+        width:100%;
+        .back {
+            left:1vw;
+            width:8vw;
+            height:8vw;
+        }
     }
 }
+
+@media screen and (min-width: 769px) {
+    html {
+      font-size: 60px;
+    }
+  }
+  @media screen and (min-width: 896px) {
+    html {
+      font-size: 70px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    html {
+      font-size: 80px;
+    }
+  }
+  @media screen and (min-width: 1152px) {
+    html {
+      font-size: 90px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    html {
+      font-size: 100px;
+    }
+    .main {
+        width:960/@max_val;
+        .total {
+            padding-top:20/@max_val;
+            div {
+                height: 52/@max_val;
+            }
+        }
+    
+        .preDay {
+            padding-top:10/@max_val;
+        }
+    
+        > p {
+            padding-top:20/@max_val;
+        }
+    
+        .list {
+            padding-top:60/@max_val;
+            li {
+                width:470/@max_val;
+                border: 2/@max_val solid #FFD633;
+                margin-bottom:20/@max_val;
+                a {
+                    padding:30/@max_val;
+                }
+                .left {
+                    span {
+                        height:48/@max_val;
+                        line-height: 48/@max_val;
+                        padding-left:10/@max_val;
+                        padding-right:10/@max_val;
+                        margin-top:17/@max_val;
+                        &.comp {
+                            background:url('../../../assets/images/invite/icon_complete_yellow.png') no-repeat left center;
+                            background-size:40/@max_val 40/@max_val;
+                            padding-left:50/@max_val;
+                        }
+                    }
+                }
+                .right {
+                    right:30/@max_val;
+                    bottom:30/@max_val;
+                }
+    
+                &:nth-of-type(2),
+                &:nth-of-type(3){
+                    border: 2/@max_val solid #000;
+                    .left {
+                        span {
+                            border: 2/@max_val solid #000;
+                            &.comp {
+                                background:url('../../../assets/images/invite/icon_complete_dark.png') no-repeat left center;
+                                background-size:40/@max_val 40/@max_val;
+                                padding-left:50/@max_val;
+                            }
+                        }
+                    }
+                }
+            }    
+        }
+    }
+
+    .back_box {
+        width:960/@max_val;
+        .back {
+            position:absolute;
+            top:30/@max_val;
+            left:-58/@max_val;
+            width:48/@max_val;
+            height:48/@max_val;
+        }
+    }
+  }

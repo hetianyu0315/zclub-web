@@ -1,21 +1,22 @@
+@import '~@/layouts/base.less';
 .main {
-    max-width:960px;
+    max-width:960/@base_val;
     margin:0 auto;
     .info {
         div {
             &:nth-of-type(1){
-                padding-top:40px;
-                font-size: 20px;
+                padding-top:40/@base_val;
+                font-size: 20/@base_val;
                 font-weight: 400;
                 color: #FFFFFF;
-                line-height: 26px;
+                line-height: 0.26rem;
             }
             &:nth-of-type(2){
-                padding-top:20px;
-                font-size: 40px;
+                padding-top:20/@base_val;
+                font-size: 40/@base_val;
                 font-weight: 400;
                 color: #FFFFFF;
-                line-height: 26px;
+                line-height: 26/@base_val;
                 em {
                     font-style: normal;
                     color: #FFD633;
@@ -25,44 +26,41 @@
 
         p {
             text-align: center;
-            font-size: 20px;
+            font-size: 0.2rem;
             font-weight: 400;
             color: #FFFFFF;
-            line-height: 26px;
-            padding-top:80px;
+            line-height: 26/@base_val;
+            padding-top:80/@base_val;
         }
     }
 
     dl {
-        width: 460px;
+        width: 460/@base_val;
         margin: 0 auto;
-        padding-top:40px;
+        padding-top:40/@base_val;
         dt {
-            font-size: 20px;
+            font-size: 0.2rem;
             font-weight: 400;
             color: #FFFFFF;
-            line-height: 26px;
-            height:40px;
-            line-height: 40px;
-            padding-top:20px;
+            height:40/@base_val;
+            padding-top:20/@base_val;
 
             span {
                 font-weight: 100;
-                font-family: Arial, Helvetica, sans-serif;
                 color:rgba(255,255,255,0.8)
             }
         }
         dd {
             div {
-                width: 460px;
-                height: 64px;
-                background: #FFFFFF url("../../../assets/images/invite/icon_copy.png") no-repeat right 10px center;
+                width: 460/@base_val;
+                height: 64/@base_val;
+                background: #FFFFFF url("../../../assets/images/invite/icon_copy.png") no-repeat right 10/@base_val center;
                 border:0;
-                line-height: 64px;
-                font-size:20px;
+                line-height: 64/@base_val;
+                font-size:0.2rem;
                 outline: none;
-                padding-left:10px;
-                padding-right:10px;
+                padding-left:10/@base_val;
+                padding-right:10/@base_val;
                 box-sizing: border-box;
                 cursor: pointer;
                 color:#000;
@@ -74,24 +72,31 @@
         color:#000;
         border:0;
         display:block;
-        margin:60px auto 0;
-        font-size: 20px;
+        margin:60/@base_val auto 0;
+        font-size: 0.2rem;
         font-weight: 400;
-        font-family: ArchivoBlack-Regular, 'Archivo Black';
         cursor:pointer;
-        height:80px;
-        width:460px;
+        height:80/@base_val;
+        width:460/@base_val;
     }
 }
-.back {
+.back_box {
+    height:0;
     position:absolute;
-    top:30px;
-    left:10px;
-    background:url("../../../assets/images/invite/icon_arrow_back.png") no-repeat;
-    background-size:100%;
-    width:48px;
-    height:48px;
-    cursor: pointer;
+    width:960/@base_val;
+    left:50%;
+    top:0;
+    transform: translate3d(-50%,0,0);
+    .back {
+        position: absolute;
+        top: 30 / @base_val;
+        left: -58 / @base_val;
+        background: url('../../../assets/images/invite/icon_arrow_back.png') no-repeat;
+        background-size: 100%;
+        width: 48 / @base_val;
+        height: 48 / @base_val;
+        cursor: pointer;
+    }
 }
 
 
@@ -99,6 +104,7 @@
     .main {
         padding-left:10vw;
         padding-right:10vw;
+        max-width:80vw;
         .info {
             div {
                 &:nth-of-type(1){
@@ -124,12 +130,16 @@
             width:80vw;
             dt {
                 font-size:4.2vw;
+                height:auto;
+                line-height: auto;
             }
             dd {
                 div {
                     width:100%;
                     height:14vw;
                     line-height: 14vw;
+                    font-size:4vw;
+                    padding:0 1vw;
                 }
             }
         }
@@ -138,11 +148,98 @@
             width:80vw;
             height:14vw;
             line-height: 14vw;
+            font-size:4vw;
         }
     }
 
-    .back {
-        width:8vw;
-        height:8vw;
+    .back_box {
+        width:100%;
+        .back {
+            left:1vw;
+            width:8vw;
+            height:8vw;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    html {
+      font-size: 60px;
+    }
+  }
+  @media screen and (min-width: 896px) {
+    html {
+      font-size: 70px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    html {
+      font-size: 80px;
+    }
+  }
+  @media screen and (min-width: 1152px) {
+    html {
+      font-size: 90px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    html {
+      font-size: 100px;
+    }
+    .main {
+        max-width:960/@max_val;
+        margin:0 auto;
+        .info {
+            div {
+                &:nth-of-type(1){
+                    padding-top:40/@max_val;
+                    font-size: 20/@max_val;
+                }
+                &:nth-of-type(2){
+                    padding-top:20/@max_val;
+                    font-size: 40/@max_val;
+                    line-height: 26/@max_val;
+                }
+            }
+    
+            p {
+                line-height: 26/@max_val;
+                padding-top:80/@max_val;
+            }
+        }
+    
+        dl {
+            width: 460/@max_val;
+            padding-top:40/@max_val;
+            dt {
+                height:40/@max_val;
+                padding-top:20/@max_val;
+            }
+            dd {
+                div {
+                    width: 460/@max_val;
+                    height: 64/@max_val;
+                    background: #FFFFFF url("../../../assets/images/invite/icon_copy.png") no-repeat right 10/@max_val center;
+                    line-height: 64/@max_val;
+                    padding-left:10/@max_val;
+                    padding-right:10/@max_val;
+                }
+            }
+        }
+        button {
+            margin:60/@max_val auto 0;
+            height:80/@max_val;
+            width:460/@max_val;
+        }
+    }
+    .back_box {
+        width:960/@max_val;
+        .back {
+            position:absolute;
+            top:30/@max_val;
+            left:-58/@max_val;
+            width:48/@max_val;
+            height:48/@max_val;
+        }
     }
 }
