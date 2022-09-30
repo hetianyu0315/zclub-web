@@ -1,291 +1,437 @@
+@import '~@/layouts/base.less';
 .main {
-    .head {
-        font-size: 40px;
-        font-weight: 400;
-        color: #FFFFFF;
-        text-align:center;
-        padding-top:40px;
-    }
+  .head {
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 40 / @base_val;
+  }
 
-    ul {
-        display:table;
-        margin:60px auto 0;
-        li {
-            font-size: 20px;
-            font-weight: 400;
-            color: #FFFFFF;
-            line-height: 26px;
-            display:table-row;
-        }
+  ul {
+    display: table;
+    margin: 60 / @base_val auto 0;
+    li {
+      font-size: 0.2rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.4;
+      display: table-row;
     }
+  }
 
-    p {
-        font-size: 20px;
-        font-weight: 400;
-        color: #FFFFFF;
-        line-height: 26px;
-        text-align:center;
-        margin-top:50px;
-    }
+  p {
+    font-size: 0.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 50 / @base_val;
+  }
 
-    button {
-        background: #FFD53F;
-        padding:25px 30px;
-        color:#000;
-        border:0;
-        display:block;
-        margin:90px auto 0;
-        font-size: 20px;
-        font-weight: 400;
-        font-family: ArchivoBlack-Regular, 'Archivo Black';
-        cursor:pointer;
-    }
+  button {
+    background: #ffd53f;
+    padding: 25 / @base_val 30 / @base_val;
+    color: #000;
+    border: 0;
+    display: block;
+    margin: 90 / @base_val auto 0;
+    font-size: 0.2rem;
+    font-weight: 400;
+    cursor: pointer;
+  }
 }
 .main2 {
-    .head {
-        font-size: 40px;
-        font-weight: 400;
-        color: #FFFFFF;
-        text-align:center;
-        padding-top:40px;
-    }
-    p {
-        font-size: 20px;
-        font-weight: 400;
-        color: #FFFFFF;
-        line-height: 26px;
-        text-align:center;
-        padding-top:80px;
-        padding-bottom:60px;
-    }
-    dl {
-        width: 460px;
-        margin: 0 auto;
-        dt {
-            font-size: 20px;
-            font-weight: 400;
-            color: #FFFFFF;
-            line-height: 26px;
-            height:40px;
-            line-height: 40px;
-            padding-top:20px;
+  .head {
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 40 / @base_val;
+  }
+  p {
+    font-size: 0.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.4;
+    text-align: center;
+    padding-top: 80 / @base_val;
+    padding-bottom: 60 / @base_val;
+  }
+  dl {
+    width: 460 / @base_val;
+    margin: 0 auto;
+    dt {
+      font-size: 0.2rem;
+      font-weight: 400;
+      color: #ffffff;
+      line-height: 1.4;
+      padding-top: 20 / @base_val;
 
-            span {
-                font-weight: 100;
-                font-family: Arial, Helvetica, sans-serif;
-                color:rgba(255,255,255,0.8)
-            }
-        }
-        dd {
-            input {
-                width: 460px;
-                height: 64px;
-                background: #FFFFFF;
-                border:0;
-                line-height: 64px;
-                font-size:20px;
-                outline: none;
-                padding-left:10px;
-                padding-right:10px;
-                box-sizing: border-box;
-            }
-        }
+      span {
+        font-weight: 100;
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgba(255, 255, 255, 0.8);
+      }
     }
-    button {
-        background: #FFD53F;
-        color:#000;
-        border:0;
-        display:block;
-        margin:60px auto 0;
-        font-size: 20px;
-        font-weight: 400;
-        font-family: ArchivoBlack-Regular, 'Archivo Black';
-        cursor:pointer;
-        height:80px;
-        width:460px;
-        &.disabled {
-            background:#CECECE;
-        }
+    dd {
+      height: 64 / @base_val;
+      input {
+        width: 460 / @base_val;
+        height: 64 / @base_val;
+        background: #ffffff;
+        border: 0;
+        font-size: 0.2rem;
+        outline: none;
+        padding-left: 10 / @base_val;
+        padding-right: 10 / @base_val;
+        box-sizing: border-box;
+        vertical-align: top;
+      }
     }
+  }
+  button {
+    background: #ffd53f;
+    color: #000;
+    border: 0;
+    display: block;
+    margin: 60 / @base_val auto 0;
+    font-size: 0.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    height: 80 / @base_val;
+    width: 460 / @base_val;
+    &.disabled {
+      background: #cecece;
+    }
+  }
 }
 .main3 {
+  .head {
+    font-size: 0.4rem;
+    font-weight: 400;
+    color: #ffffff;
+    text-align: center;
+    padding-top: 40 / @base_val;
+  }
+  p {
+    font-size: 0.2rem;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.4;
+    text-align: center;
+    padding-top: 80 / @base_val;
+    padding-bottom: 30 / @base_val;
+  }
+  dl {
+    width: 460 / @base_val;
+    margin: 0 auto;
+    dt {
+      font-size: 0.2rem;
+      font-weight: 400;
+      color: #ffffff;
+      padding-top: 20 / @base_val;
+    }
+    dd {
+        line-height: 0;
+      input {
+        width: 460 / @base_val;
+        height: 64 / @base_val;
+        background: #ffffff;
+        border: 0;
+        font-size: 0.2rem;
+        outline: none;
+        padding-left: 10 / @base_val;
+        padding-right: 10 / @base_val;
+        box-sizing: border-box;
+      }
+      .sendbox {
+        height: 40 / @base_val;
+        text-align: right;
+        padding-top: 26 / @base_val;
+        span {
+          width: 119 / @base_val;
+          height: 40 / @base_val;
+          line-height: 40 / @base_val;
+          border: 2px solid #ffd633;
+          font-size: 0.16rem;
+          font-weight: 400;
+          color: #ffd633;
+          display: inline-block;
+          text-align: center;
+          cursor: pointer;
+          vertical-align: top;
+        }
+      }
+    }
+  }
+  button {
+    background: #ffd53f;
+    color: #000;
+    border: 0;
+    display: block;
+    margin: 86 / @base_val auto 0;
+    font-size: 0.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    height: 80 / @base_val;
+    width: 460 / @base_val;
+
+    &.disabled2 {
+      background: #cecece;
+    }
+  }
+}
+
+.back_box {
+    height:0;
+    position:absolute;
+    width:960/@base_val;
+    left:50%;
+    top:0;
+    transform: translate3d(-50%,0,0);
+    .back {
+        position: absolute;
+        top: 30 / @base_val;
+        left: -58 / @base_val;
+        background: url('../../../assets/images/invite/icon_arrow_back.png') no-repeat;
+        background-size: 100%;
+        width: 48 / @base_val;
+        height: 48 / @base_val;
+        cursor: pointer;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 4vw;
     .head {
-        font-size: 40px;
-        font-weight: 400;
-        color: #FFFFFF;
-        text-align:center;
-        padding-top:40px;
+      font-size: 6vw;
+      padding-top: 6vw;
+    }
+    ul {
+      margin-top: 10vw;
+      li {
+        font-size: 3.6vw;
+      }
     }
     p {
-        font-size: 20px;
-        font-weight: 400;
-        color: #FFFFFF;
-        line-height: 26px;
-        text-align:center;
-        padding-top:80px;
-        padding-bottom:30px;
+      font-size: 3.6vw;
+      text-align: left;
+      margin-top: 4vw;
+    }
+
+    button {
+      font-size: 4vw;
+      max-width: 80vw;
+      margin: 15vw auto 0;
+    }
+  }
+  .main2 {
+    .head {
+      font-size: 6vw;
+      padding-top: 6vw;
+    }
+    p {
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+      font-size: 4vw;
     }
     dl {
-        width: 460px;
-        margin: 0 auto;
-        dt {
-            font-size: 20px;
-            font-weight: 400;
-            color: #FFFFFF;
-            line-height: 26px;
-            height:40px;
-            line-height: 40px;
-            padding-top:20px;
+      width: 80vw;
+      padding-bottom:4vw;
+      dt {
+        font-size: 4.2vw;
+      }
+      dd {
+        height: 10vw;
+        input {
+          width: 100%;
+          height: 10vw;
+          line-height: 10vw;
+          font-size:5vw;
         }
-        dd {
-            input {
-                width: 460px;
-                height: 64px;
-                background: #FFFFFF;
-                border:0;
-                line-height: 64px;
-                font-size:20px;
-                outline: none;
-                padding-left:10px;
-                padding-right:10px;
-                box-sizing: border-box;
-            }
-            .sendbox {
-                height:40px;
-                text-align:right;
-                padding-top:26px;
-                span {
-                    width: 119px;
-                    height: 40px;
-                    line-height: 40px;
-                    border: 2px solid #FFD633;
-                    font-size: 16px;
-                    font-weight: 400;
-                    color: #FFD633;
-                    display:inline-block;
-                    text-align:center;
-                    cursor: pointer;
-                }
-            }
-        }
+      }
     }
+
     button {
-        background: #FFD53F;
-        color:#000;
-        border:0;
-        display:block;
-        margin:86px auto 0;
-        font-size: 20px;
-        font-weight: 400;
-        font-family: ArchivoBlack-Regular, 'Archivo Black';
-        cursor:pointer;
-        height:80px;
-        width:460px;
-
-        &.disabled2 {
-            background:#CECECE;
-        }
+      width: 80vw;
+      height: 10vw;
+      line-height: 10vw;
+      font-size: 6vw;
     }
-}
-
-.back {
-    position:absolute;
-    top:30px;
-    left:10px;
-    background:url("../../../assets/images/invite/icon_arrow_back.png") no-repeat;
-    background-size:100%;
-    width:48px;
-    height:48px;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 768px) { 
-    .main {
-        padding:0 4vw;
-        .head {
-            font-size:6vw;
-            padding-top:6vw;
-        }
-        ul {
-            margin-top:10vw;
-            li {
-                font-size:3.6vw;
-            }
-        }
-        p {
-            font-size:3.6vw;
-            text-align:left;
-            margin-top:4vw;
-        }
-
-        button {
-            font-size:4vw;
-            max-width: 80vw;
-            margin:15vw auto 0;
-        }
+  }
+  .main3 {
+    .head {
+      font-size: 6vw;
+      padding-top: 6vw;
     }
-    .main2 {
-        .head {
-            font-size:6vw;
-            padding-top:6vw;
-        }
-        p {
-            padding-top:4vw;
-            padding-bottom:4vw;
-            font-size:4vw;
-        }
-        dl {
-            width:80vw;
-            dt {
-                font-size:4.2vw;
-            }
-            dd {
-                input {
-                    width:100%;
-                    height:14vw;
-                    line-height: 14vw;
-                }
-            }
-        }
-
-        button {
-            width:80vw;
-            height:14vw;
-            line-height: 14vw;
-        }
+    p {
+      padding-top: 4vw;
+      padding-bottom: 4vw;
+      font-size: 4vw;
     }
-    .main3 {
-        .head {
-            font-size:6vw;
-            padding-top:6vw;
+    dl {
+      width: 80vw;
+      dt {
+        font-size: 4.2vw;
+      }
+      dd {
+        height: 10vw;
+        input {
+          width: 100%;
+          height: 10vw;
+          line-height: 10vw;
+          font-size:5vw;
         }
-        p {
-            padding-top:4vw;
-            padding-bottom:4vw;
-            font-size:4vw;
-        }
-        dl {
-            width:80vw;
-            dt {
-                font-size:4.2vw;
-            }
-            dd {
-                input {
-                    width:100%;
-                    height:14vw;
-                    line-height: 14vw;
-                }
+        .sendbox {
+            span {
+                height:4vw;
+                font-size:2.4vw;
+                line-height: 4vw;
             }
         }
-
-        button {
-            width:80vw;
-            height:14vw;
-            line-height: 14vw;
-        }
+      }
     }
+
+    button {
+      width: 80vw;
+      height: 10vw;
+      line-height: 10vw;
+      font-size: 6vw;
+    }
+  }
+  .back_box {
+    width:100%;
     .back {
+        left:1vw;
         width:8vw;
         height:8vw;
     }
+}
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 896px) {
+  html {
+    font-size: 70px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 80px;
+  }
+}
+@media screen and (min-width: 1152px) {
+  html {
+    font-size: 90px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 100px;
+  }
+  .main {
+    .head {
+      padding-top: 40px/@max_val;
+    }
+
+    ul {
+      margin: 60/@max_val auto 0;
+    }
+
+    p {
+      margin-top: 50/@max_val;
+    }
+
+    button {
+      padding: 25/@max_val 30/@max_val;
+      margin: 90/@max_val auto 0;
+    }
+  }
+  .main2 {
+    .head {
+      padding-top: 40/@max_val;
+    }
+    p {
+      padding-top: 80/@max_val;
+      padding-bottom: 60/@max_val;
+    }
+    dl {
+      width: 460/@max_val;
+      dt {
+        padding-top: 20/@max_val;
+      }
+      dd {
+        height: 64/@max_val;
+        input {
+          width: 460/@max_val;
+          height: 64/@max_val;
+          padding-left: 10/@max_val;
+          padding-right: 10/@max_val;
+        }
+      }
+    }
+    button {
+      margin: 60/@max_val auto 0;
+      height: 80/@max_val;
+      width: 460/@max_val;
+    }
+  }
+  .main3 {
+    .head {
+      padding-top: 40/@max_val;
+    }
+    p {
+      padding-top: 80/@max_val;
+      padding-bottom: 30/@max_val;
+    }
+    dl {
+      width: 460/@max_val;
+      dt {
+        padding-top: 20/@max_val;
+      }
+      dd {
+        input {
+          width: 460/@max_val;
+          height: 64/@max_val;
+          padding-left: 10/@max_val;
+          padding-right: 10/@max_val;
+        }
+        .sendbox {
+          height: 40/@max_val;
+          padding-top: 26/@max_val;
+          span {
+            width: 119/@max_val;
+            height: 40/@max_val;
+            line-height: 40/@max_val;
+          }
+        }
+      }
+    }
+    button {
+      margin: 86/@max_val auto 0;
+      height: 80/@max_val;
+      width: 460/@max_val;
+
+      &.disabled2 {
+        background: #cecece;
+      }
+    }
+  }
+
+  .back_box {
+    width:960/@max_val;
+    .back {
+        position:absolute;
+        top:30/@max_val;
+        left:-58/@max_val;
+        width:48/@max_val;
+        height:48/@max_val;
+    }
+}
 }
