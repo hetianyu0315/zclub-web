@@ -24,7 +24,7 @@
         content:'';
         position:absolute;
         width:5/@base_val;
-        height: 6.7rem;
+        height: 3*1.26+1rem;
         background: linear-gradient(180deg, #000000 0%, #36D2A8 100%);
         top:0
       }
@@ -39,9 +39,10 @@
     }
 
     .timeline {
+      padding-top: 0.77rem;
       .timeline_node {
-        margin:0.6rem auto;
         position:relative;
+        height: 1.26rem;
         color: #666666;
         .time {
           font-size: 0.42rem;
@@ -63,8 +64,7 @@
             background:#666;
             position:absolute;
             left:-20/@base_val;
-            top:50%;
-            transform: translate3d(0,-50%,0);
+            top:14/@base_val;
           }
           &.achieve{
             color: #fff;
@@ -75,8 +75,7 @@
               background:url(../../assets/images/btn_check.svg);
               background-size:100%;
               left:-27/@base_val;
-              top:50%;
-              transform: translate3d(0,-50%,0);
+              top:7/@base_val;
             }
           }
         }
@@ -92,8 +91,7 @@
             background:#666;
             position:absolute;
             right:-20/@base_val;
-            top:50%;
-            transform: translate3d(0,-50%,0);
+            top:14/@base_val;
           }
           &.achieve{
             color:#fff;
@@ -105,8 +103,7 @@
               background-size:100%;
               left:auto;
               right:-27/@base_val;
-              top:50%;
-              transform: translate3d(0,-50%,0);
+              top:7/@base_val;
             }
           }
         }
@@ -125,49 +122,55 @@
         .roadmap_content {
           .processbar {
             &::before {
-              height: 570/@phone_val;
+              height: 3*(126/@phone_val)+85/@phone_val;
             }
           }
           .timeline {
-              .timeline_node {
-                .time {
-                    font-size:4vw;
+            padding-top: 77/@phone_val;
+            .timeline_node {
+              height: 126/@phone_val;
+              .time {
+                  font-size:4vw;
+              }
+              .text {
+                  font-size:3vw;
+                  line-height: 4.2vw;
+              }
+              &:nth-of-type(2n){
+                padding-left:50/@phone_val;
+                &::after {
+                  width:40/@phone_val;
+                  height:40/@phone_val;
+                  left:-20/@phone_val;
+                  top: 0;
                 }
-                .text {
-                    font-size:3vw;
-                    line-height: 4.2vw;
-                }
-                &:nth-of-type(2n){
-                  padding-left:50/@phone_val;
+                &.achieve{
                   &::after {
-                    width:40/@phone_val;
-                    height:40/@phone_val;
-                    left:-20/@phone_val;
-                  }
-                  &.achieve{
-                    &::after {
-                      width:54/@phone_val;
-                      height:54/@phone_val;
-                      left:-27/@phone_val;
-                    }
-                  }
-                }
-                &:nth-of-type(2n+1){
-                  padding-right:50/@phone_val;
-                  &::after {
-                    width:40/@phone_val;
-                    height:40/@phone_val;
-                    right:-20/@phone_val;
-                  }
-                  &.achieve{
-                    &::after {
-                      width:54/@phone_val;
-                      height:54/@phone_val;
-                      right:-27/@phone_val;
-                    }
+                    width:54/@phone_val;
+                    height:54/@phone_val;
+                    left:-27/@phone_val;
+                    top: -7/@phone_val;
                   }
                 }
               }
+              &:nth-of-type(2n+1){
+                padding-right:50/@phone_val;
+                &::after {
+                  width:40/@phone_val;
+                  height:40/@phone_val;
+                  right:-20/@phone_val;
+                  top: 0;
+                }
+                &.achieve{
+                  &::after {
+                    width:54/@phone_val;
+                    height:54/@phone_val;
+                    right:-27/@phone_val;
+                    top: -7/@base_val;
+                  }
+                }
+              }
+            }
           }
         }
     } 
@@ -190,13 +193,13 @@
   
       .timeline {
         .timeline_node {
-          margin:60/@max_val auto;
           &:nth-of-type(2n){
             padding-left:50/@max_val;
             &::after {
               width:40/@max_val;
               height:40/@max_val;
               left:-20/@max_val;
+              
             }
             &.achieve{
               &::after {
