@@ -19,12 +19,12 @@ export default function IndexPage(){
             toast('Paste the URL of the tweet to input box');
             return;
         }
-        axios.post(`${api}/v1/binding?pkg=app.zclub`,{
+        axios.post(`${api}/v1/binding?pkg=app.zclub&e=LFGf`,{
             "bind_type":"twitter",
             "bind_id":val
         },{
             headers:{
-                'Authorization':`HIN ${token}`
+                'Authorization':`HIN ${localStorage.getItem('airdropTk')}`
             }
         }).then(res=>{
             if(res.data.code == 0){
@@ -48,9 +48,9 @@ export default function IndexPage(){
     },[userInfo])
 
     const getUserInfo = ()=>{
-        axios.get(`${api}/v1/users/me?pkg=app.zclub`,{
+        axios.get(`${api}/v1/users/me?pkg=app.zclub&e=LFGf`,{
             headers:{
-                'Authorization':`HIN ${token}`
+                'Authorization':`HIN ${localStorage.getItem('airdropTk')}`
             }
         }).then(res=>{
             if(res.data.code == 0){

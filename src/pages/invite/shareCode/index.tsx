@@ -39,9 +39,9 @@ export default function IndexPage(){
     }
 
     useEffect(()=>{
-        axios.post(`${api}/v1/users/me?pkg=app.zclub`,null,{
+        axios.post(`${api}/v1/users/me?pkg=app.zclub&e=GkU4`,null,{
             headers:{
-                'Authorization':`HIN ${isLogin}`
+                'Authorization':`HIN ${localStorage.getItem('token')}`
             }
         }).then((res)=>{
             const {total_point,daily_point,referred,id} = res.data.data;
@@ -53,7 +53,7 @@ export default function IndexPage(){
         })
     },[])
     return <>
-        <div className={styles.back} onClick={()=>history.push('/referral/mission')}></div>
+        <div className={styles.back_box}><div className={styles.back} onClick={()=>history.push('/referral/mission')}></div></div>
         <div className={styles.main}>
             <div className={styles.info}>
                 <div>Add referrals:</div>

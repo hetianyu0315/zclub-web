@@ -17,7 +17,7 @@ export default function WalletBtn(props: any) {
         return 'Connect';
     }, [connecting, connected]);
     const getNonce = () => {
-        axios.post(`${api}/v1/auth/nonce?pkg=app.zclub`).then((res) => {
+        axios.post(`${api}/v1/auth/nonce?pkg=app.zclub&e=LFGf`).then((res) => {
             if (res.data.code == 0) {
                 setNonce(res.data.data.nonce);
             } else {
@@ -28,7 +28,7 @@ export default function WalletBtn(props: any) {
         })
     }
     const login = (signature: string) => {
-        axios.post(`${api}/v1/auth/login?pkg=app.zclub`, {
+        axios.post(`${api}/v1/auth/login?pkg=app.zclub&e=LFGf`, {
             login_type: 'solana',
             address: publicKey?.toBase58(),
             nonce: nonce,

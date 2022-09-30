@@ -1,52 +1,112 @@
+@import '~@/layouts/base.less';
 .header {
-    height:110px;
-    max-width:960px;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    margin:0 auto;
+  height: 110 / @base_val;
+  max-width: 960 / @base_val;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+.logo {
+  a {
+    display: block;
+    width: 94 / @base_val;
+    height: 80 / @base_val;
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 .opts {
-    margin-right:20px;
-    span {
-        display:inline-block;
-        height:40px;
-        line-height: 40px;
-        background:url('../../assets/images/invite/icon_exit.png') no-repeat 5px center;
-        background-size: auto 100%;
-        border:4px solid #FFD53F;
-        padding-left:50px;
-        padding-right:15px;
-        cursor: pointer;
-        color:#FFD53F;
-    }
-
+  margin-right: 20 / @base_val;
+  span {
+    display: inline-block;
+    height: 34 / @base_val;
+    line-height: 34 / @base_val;
+    background: url('../../assets/images/invite/icon_exit.png') no-repeat 5px
+      center;
+    background-size: auto 100%;
+    border: 4 / @base_val solid #ffd53f;
+    padding-left: 50 / @base_val;
+    padding-right: 15 / @base_val;
+    font-size: 0.2rem;
+    cursor: pointer;
+    color: #ffd53f;
+    vertical-align: middle;
+  }
 }
 
-@media screen and (max-width: 768px) { 
-    .header {
-        display:block;
-        position: relative;
+@media screen and (max-width: 768px) {
+  .header {
+    height: 110 / @phone_val;
+  }
+  .logo {
+    a {
+      width: 100 / @phone_val;
+      height: 85 / @phone_val;
     }
-    .logo {
-        margin:0 auto;
-        text-align: center;
-        img {
-            width:46vw;
-        }
+  }
+  .opts {
+    position: absolute;
+    right: 0;
+    top: 30 / @phone_val;
+    span {
+      height: 40 / @phone_val;
+      line-height: 40 / @phone_val;
+      padding-left: 50 / @phone_val;
+      padding-right: 15 / @phone_val;
+      border: 4 / @phone_val solid #ffd53f;
+      font-size:2.8vw;
     }
-    .opts {
-        position: absolute;
-        right:0vw;
-        top:30px;
-        span {
-            height:6vw;
-            line-height: 6vw;
-            font-size:3.6vw;
-            padding-left:8vw;
-            padding-right:1vw;
-            border:0.5vw solid #FFD53F;
-        }
+  }
+}
+@media screen and (min-width: 769px) {
+  html {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 896px) {
+  html {
+    font-size: 70px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 80px;
+  }
+}
+@media screen and (min-width: 1152px) {
+  html {
+    font-size: 90px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 100px;
+  }
+  .header {
+    height: 110 / @max_val;
+    max-width: 960 / @max_val;
+  }
+  .logo {
+    a {
+      width: 94 / @max_val;
+      height: 80 / @max_val;
     }
+  }
+  .opts {
+    margin-right: 20 / @max_val;
+    span {
+      height: 40 / @max_val;
+      line-height: 40 / @max_val;
+      background: url('../../assets/images/invite/icon_exit.png') no-repeat 5 /
+        @max_val center;
+      background-size: auto 100%;
+      border: 4 / @max_val solid #ffd53f;
+      padding-left: 50 / @max_val;
+      padding-right: 15 / @max_val;
+    }
+  }
 }

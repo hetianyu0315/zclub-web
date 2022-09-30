@@ -1,3 +1,4 @@
+import { BundlerConfigType } from 'umi';
 export default {
   title: 'ZClub',
   favicon: '/favicons/favicon.ico',
@@ -5,11 +6,16 @@ export default {
     {
       name: 'keywords',
       content:
+        'Leading audio-focused social app that enable users to earn revenue share, web3, NFT, solana, metaverse, crypto, airdrop, toEarn, sol, ETH, gamefi, socialfi, defi, dex, token, wallet, FTX, phantom, uniswap',
+    },
+    {
+      name: 'description',
+      content:
         'Leading audio-focused social app that enable users to earn revenue share',
     },
     {
       name: 'apple-mobile-web-app-capable',
-      content: 'yes'
+      content: 'yes',
     },
     {
       property: 'og:title',
@@ -29,76 +35,96 @@ export default {
     },
     {
       property: 'twitter:card',
-      content: 'summary_large_image'
+      content: 'summary_large_image',
     },
     {
       property: 'twitter:title',
-      content: 'ZClub'
+      content: 'ZClub',
     },
     {
       property: 'twitter:description',
-      content: 'Leading audio-focused social app that enable users to earn revenue share'
+      content:
+        'Leading audio-focused social app that enable users to earn revenue share',
     },
     {
       property: 'twitter:url',
-      content: 'https://zclub.app'
+      content: 'https://zclub.app',
     },
     {
       property: 'twitter:image',
-      content: 'https://zclub.app/img_tweet.png'
-    }
+      content: 'https://zclub.app/img_tweet.png',
+    },
   ],
-  links:[{
-    ref:'preload',
-    href:'https://fonts.gstatic.com/s/archivoblack/v17/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf',
-    as:'font',
-    type:'font/ttf',
-    crossorigin:'anonymous'
-  }],
+  links: [
+
+  ],
   routes: [
     {
       path: '/airdrop',
       component: '@/layouts/airdrop/index',
       routes: [
         { path: '/airdrop', exact: true, component: '@/pages/airdrop/index' },
-        { path: '/airdrop/verify', exact: true, component: '@/pages/airdrop/verify' },
-        { redirect: '/airdrop' }
-      ]
+        {
+          path: '/airdrop/verify',
+          exact: true,
+          component: '@/pages/airdrop/verify',
+        },
+        { redirect: '/airdrop' },
+      ],
     },
     {
       path: '/referral',
       component: '@/layouts/index2',
       routes: [
         { path: '/referral', exact: true, component: '@/pages/invite/index' },
-        { path: '/referral/mission', exact: true, component: '@/pages/invite/mission/index' },
-        { path: '/referral/sharecode', exact: true, component: '@/pages/invite/shareCode/index' },
-        //{ path: '/referral/wallet', exact: true, component: '@/pages/invite/wallet/index' },
-        { redirect: '/referral' }
-      ]
+        {
+          path: '/referral/mission',
+          exact: true,
+          component: '@/pages/invite/mission/index',
+        },
+        {
+          path: '/referral/sharecode',
+          exact: true,
+          component: '@/pages/invite/shareCode/index',
+        },
+        {
+          path: '/referral/wallet',
+          exact: true,
+          component: '@/pages/invite/wallet/index',
+        },
+        { redirect: '/referral' },
+      ],
     },
     {
       path: '/',
       component: '@/layouts/index',
       routes: [
         { path: '/', exact: true, component: '@/pages/index' },
-        { path: '/howToPlay', exact: true, component: '@/pages/howToPlay/index' },
-        { path: '/litePaper', exact: true, component: '@/pages/litePaper/index' },
-        { redirect: '/' }
+        {
+          path: '/howToPlay',
+          exact: true,
+          component: '@/pages/howToPlay/index',
+        },
+        {
+          path: '/litePaper',
+          exact: true,
+          component: '@/pages/litePaper/index',
+        },
+        { redirect: '/' },
       ],
     },
   ],
-  ssr:{},
-  exportStatic: {
-  },
+  ssr: {},
+  exportStatic: {},
   dynamicImport: {
     loading: '@/pages/loading',
   },
   hash: true,
   dva: {
     immer: false,
-    hmr: false
+    hmr: false,
   },
-  webpack5:{},
+  webpack5: {},
   analyze: {
     analyzerMode: 'server',
     analyzerPort: 8888,
@@ -109,19 +135,21 @@ export default {
     logLevel: 'info',
     defaultSizes: 'parsed', // stat  // gzip
   },
-  chunks: ['vendors','commons', 'umi'],
-  chainWebpack(memo, { env, webpack }) {
-    memo.module.rule('svga')
+  chunks: ['vendors', 'commons', 'umi'],
+  chainWebpack(memo, { env, webpack, type }) {
+    memo.module
+      .rule('svga')
       .test(/\.svga$/)
       .use('file-loader')
       .loader('url-loader')
       .options({
-        limit: false
-      })
-    memo.module.rule('css')
+        limit: false,
+      });
+    memo.module
+      .rule('css')
       .test(/\.css$/)
       .sideEffects(true);
-    
+
     memo.optimization.splitChunks({
       cacheGroups: {
         vendors: {
@@ -137,7 +165,7 @@ export default {
         },
       },
     });
-    
+
     return memo;
-  }
+  },
 };

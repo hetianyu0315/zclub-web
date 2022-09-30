@@ -20,7 +20,7 @@ export default function RoadMap() {
               <div className={styles.time}>2022/8</div>
               <div className={styles.text}>Gamification Design<br/>NFT Marketplace<br/>Genesis NFTs</div>
             </li>
-            <li className={styles.timeline_node}>
+            <li className={`${styles.timeline_node} ${styles.achieve}`}>
               <div className={styles.time}>2022/9</div>
               <div className={styles.text}>SocialFi Implement<br/>Beta Launch</div>
             </li>

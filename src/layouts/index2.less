@@ -1,35 +1,29 @@
-@font-face {
-    font-family: Archivo Black;
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/archivoblack/v17/HTxqL289NzCGg4MzN6KJ7eW6OYs.ttf) format("truetype")
-  }
+@import "base.less";
 
-  input {
-    border-radius: 0;
+input {
+  border-radius: 0;
+}
+.xkd(@n, @i: 1) when (@i =< @n) {
+  &:nth-of-type(@{i}) {
+    transform: rotate((@i - 1)*60deg);
   }
-  .xkd(@n, @i: 1) when (@i =< @n) {
-    &:nth-of-type(@{i}) {
-      transform: rotate((@i - 1)*60deg);
-    }
-    .xkd(@n, (@i + 1));
-  }  
-  
-  body,nav,footer,div,p,a,span,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5 {
-    margin:0;
-    padding:0;
-  }
-  
-  body {
-    background: #000000;
-    font-family: ArchivoBlack-Regular, 'Archivo Black';
-    color: #FFFFFF;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
+  .xkd(@n, (@i + 1));
+}  
+
+body,nav,footer,div,p,a,span,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5 {
+  margin:0;
+  padding:0;
+}
+
+body {
+  background: #000000;
+  font-family: Arial-Black, Arial;
+  color: #FFFFFF;
+}
+
+ul {
+  list-style-type: none;
+}
 
 .main {
     width:100vw;
@@ -46,19 +40,19 @@
   left:0;
   bottom:0;
   width:100%;
-  height:300px;
+  height: 250/@base_val;
   overflow:hidden;
 
   .chairs {
     max-width:1200px;
     position:relative;
     margin:0 auto;
+    height:100%;
     > img {
       display:block;
       width:90%;
       margin:0 auto;
       position:relative;
-      top:-50px;
     }
     .box {
       position: absolute;
@@ -73,7 +67,7 @@
       width:25%;
       div {
         width:100%;
-        height:200px;
+        height:200/@base_val;
       }
     }
   }
@@ -136,7 +130,7 @@
     background-size: 100%;
   }
   .footer{
-    height:50vw;
+    height:250/@phone_val;
     .chairs {
       > img {
         width:100vw;
@@ -154,6 +148,24 @@
         }
         &:last-of-type{
           display:none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width:769px){html{font-size:60px}}
+@media screen and (min-width:896px){html{font-size:70px}}
+@media screen and (min-width:1024px){html{font-size:80px}}
+@media screen and (min-width:1152px){html{font-size:90px}}
+@media screen and (min-width:1280px){
+  html{font-size:100px}
+  .footer{
+    height:250/@max_val;
+    .chairs {
+      span {
+        div {
+          height:200/@max_val;
         }
       }
     }

@@ -37,7 +37,7 @@ export default function IndexPage(){
             return;
         }
        
-        axios.post(`${api}/v1/auth/otp?&pkg=app.zclub`,{
+        axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
             email,
         }).then(()=>{
             setStep('3')
@@ -73,7 +73,7 @@ export default function IndexPage(){
     const Submit =async ()=>{
         if(butCls==''){
             try{
-                let res = await axios.post(`${api}/v1/auth/login?&refer=${code}&pkg=app.zclub`,{
+                let res = await axios.post(`${api}/v1/auth/login?&refer=${code}&pkg=app.zclub&e=GkU4`,{
                     email,
                     code:otp,
                     login_type: "email",
@@ -95,7 +95,7 @@ export default function IndexPage(){
     }
     const sendCode = ()=>{
         if(count==0){
-            axios.post(`${api}/v1/auth/otp?&pkg=app.zclub`,{
+            axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
                 email,
             }).then(()=>{
                 setCodeTxt('Send Again')
@@ -159,7 +159,7 @@ export default function IndexPage(){
         {
             step=='2' &&
             <>
-                <div className={styles.back} onClick={()=>setStep('1')}></div>
+                <div className={styles.back_box}><div className={styles.back} onClick={()=>setStep('1')}></div></div>
                 <div className={styles.main2}>
                     <div className={styles.head}>Invite and Earn</div>
                     <p>Please Enter your email for sign up</p>
@@ -179,7 +179,7 @@ export default function IndexPage(){
         {
             step=='3'&&
             <>
-                <div className={styles.back} onClick={()=>setStep('2')}></div>
+                <div className={styles.back_box}><div className={styles.back} onClick={()=>setStep('2')}></div></div>
                 <div className={styles.main3}>
                     <div className={styles.head}>Invite and Earn</div>
                     <p>We've send an OTP to your email. <br/>Please check it!</p>
