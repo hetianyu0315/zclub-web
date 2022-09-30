@@ -43,7 +43,7 @@ export default function HomePage() {
             </a>
           </li>
           <li className={styles.down_item}>
-            <a className={styles.down_link} href="javascript:void(0)" onClick={showComeSoon}>
+            <a className={styles.down_link} target="_blank" href="https://play.google.com/store/apps/details?id=com.meta.zclub">
             <img className={styles.down_google} src={downico02} alt="" />
             </a>
           </li>
