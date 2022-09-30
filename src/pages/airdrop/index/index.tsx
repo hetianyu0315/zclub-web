@@ -666,7 +666,7 @@ export default function IndexPage() {
           <>
             <div className={styles.box}>
               <img src={Img} alt="" />
-              <h2>ZCLUB NFT</h2>
+              <h2>&nbsp;</h2>
               <p>
                 Millions of people contribute to Twitter Space, but they have no
                 return. ZClub is making a change.
@@ -675,9 +675,10 @@ export default function IndexPage() {
                 <li>Airdrop to Twitter Space users with no gas.</li>
                 <li>The credential for claiming future airdrops.</li>
                 <li>A pass to the next-gen social networking.</li>
-                <li>A identity-bound NFT tie to your Twitter ID.</li>
               </ul>
-              <WalletBtn onClick={Connection}>Connect Wallet</WalletBtn>
+              <div>
+                <WalletBtn onClick={Connection}>Connect Wallet</WalletBtn>
+              </div>
             </div>
             <div className={styles.steps}>
               <ul>
