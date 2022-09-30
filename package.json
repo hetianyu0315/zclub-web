@@ -1,11 +1,12 @@
 {
   "private": true,
   "scripts": {
-    "dev": "WEBPACK_FS_CACHE=false umi dev",
-    "build": "WEBPACK_FS_CACHE=false RM_SERVER_FILE=true umi build",
-    "start": "npm run dev",
     "analyze": "ANALYZE=true umi build",
-    "deploy": "node ./deploy/production.js"
+    "build": "WEBPACK_FS_CACHE=false RM_SERVER_FILE=true umi build",
+    "deploy": "node ./deploy/production.js",
+    "dev": "WEBPACK_FS_CACHE=false umi dev",
+    "pre-dep": "node ./deploy/dev.js",
+    "start": "npm run dev"
   },
   "dependencies": {
     "@solana/wallet-adapter-base": "^0.9.5",
