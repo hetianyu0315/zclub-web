@@ -23,7 +23,7 @@ export default function IndexPage(){
     const goStep2 = ()=>{ 
         setStep('2')
     }
-    const goStep3 = ()=>{
+    const goStep3 = async ()=>{
         if(!email.length){
             toast('please input email');
             return;
@@ -32,20 +32,23 @@ export default function IndexPage(){
             toast('invalid email');
             return;
         }
-        if(code.length && code.length!=10){
+        if(code.length && code.length>10){
             toast('invalid referral code');
             return;
         }
-       
-        axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
+       try {
+        const res = await axios.post(`${api}/v1/auth/otp?&pkg=app.zclub&e=GkU4`,{
             email,
-        }).then(()=>{
+            code
+        })
+        if(res.data.code==0){
             setStep('3')
             countdown();
-        }).catch(e=>{
+        }
+       }catch(e:any){
             const msg = e?.response?.data?.err_msg||'network err';
             toast(msg);
-        })
+       }
     }
     const handleChange=(type:string, value:string)=>{
         switch(type){
