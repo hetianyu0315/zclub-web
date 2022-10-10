@@ -47,6 +47,11 @@ export default function HomePage() {
             <img className={styles.down_google} src={downico02} alt="" />
             </a>
           </li>
+          <li className={styles.down_item2}>
+            <a className={styles.down_link} target="_blank" download="zclub_1.1.1_5.apk" href="https://zclub.app/download/zclub_1.1.1_5.apk">
+            <img className={styles.down_apk} src={require('@/assets/images/logo.png')} alt="" /><span>Download APK</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
