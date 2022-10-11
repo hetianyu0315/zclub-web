@@ -85,7 +85,7 @@ export default function IndexPage() {
         <dd className={styles.part_content}>
           <div className={`${styles.img_box} ${styles.img_box_1}`}>
             {idx2 != 0 && (
-              <span className={`${styles.img_box} ${styles.img_box_1}`} onClick={() => setIdx2(0)}></span>
+              <span className={`${styles.img_box} ${styles.left}`} onClick={() => setIdx2(0)}></span>
             )}
             {idx2 != 1 && (
               <span className={`${styles.img_btn} ${styles.right}`} onClick={() => setIdx2(1)}></span>
