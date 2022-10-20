@@ -31,6 +31,11 @@ const teamInfo = [
     avatar:require('@/assets/images/phone_1.png'),
     desc:`Forrest C is the founder of Hacker Interstellar(closed C-round $50 million Funding from Tencent in 2018), and co-founder of Umeng(acquired by Alibaba for 80 million dollars),  he is currently based in Singapore and lead a team focusing on web3 and NFTs. `
   },
+  {
+    name:'Swagata Das',
+    avatar:require('@/assets/images/phone_6.png'),
+    desc:`Swagata Das has an international education background: bachelors from India, exchange student at York University in Canada, international MBA graduate from Peking University. With a total of 7+ years of work experience in the tech industry, Swagata greatly focuses on ADDING VALUE in businesses and people. `
+  },
 ]
 
 export default function Team() {
